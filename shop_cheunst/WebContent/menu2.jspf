@@ -1,0 +1,123 @@
+<div
+	class="box component section box_753258383 fixed-component box-header-global-nav">
+
+	<div class="component-content" id="01953652822">
+		<a class="js-mobile-menu-trigger" href="#"><span></span></a>
+		<div class="paragraphSystem content">
+			<a id="0268515564" style="visibility: hidden"></a>
+			<div
+				class="snippetReference component section reference-default first odd default-style">
+				<div class="inner">
+					<div class="component-content">
+						<a id="1880938589" style="visibility: hidden"></a>
+						<div
+							class="parametrizedhtml component section reference-language-selector first odd last default-style">
+							<div
+								class="parametrizedhtml component section reference-language-selector first odd last default-style">
+								<div class="component-content">
+									<div
+										class="image component section first odd last image-language-selector">
+										<div class="component-content left">
+											<figure>
+												<a src="${shop}/img/HK.png" ></a>
+												<figcaption>
+													<p>
+														HK (HKD/ $)<br>
+													</p>
+												</figcaption>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="image component section even default-style">
+				<div class="component-content middle">
+					<a > <img
+						src="${shop}/img/logo_s.png"
+						alt="Steven &amp; Co" title="Steven &amp; Co">
+					</a>
+				</div>
+			</div>
+			<div
+				class="parametrizedhtml component section reference-dynamic-navigationpanel odd last default-style">
+				<div class="component-content">
+					<div class="visible-in-header">
+						<ul class="rightPanel">
+							<li class="account topLevel"><a class="accountnavlink"
+								title="Account"
+								href="https://www.selfridges.com/HK/en/cat/MyAccount/?currPage=__currPage__&amp;header=Y"
+								data-setcurrpage="true"> Account </a>
+								<div id="myaccountnav">
+									<div id="myaccountArrow"></div>
+									<div id="myaccountnavInner">
+										<h3>My account</h3>
+										<ul>
+											<li><a
+												href="https://www.selfridges.com/HK/en/webapp/wcs/stores/servlet/UserRegistrationForm?currPage=__currPage__&amp;storeId=10052&amp;editRegistration=Y&amp;bct=&amp;langId=-1&amp;catalogId=16151"
+												data-setcurrpage="true" rel="nofollow">Sign in or
+													Register</a></li>
+										</ul>
+									</div>
+								</div></li>
+
+							<!-- cid=WC_slfp_node_4.server2 -->
+							<!-- tst=Wed Oct 18 08:17:21 UTC 2017 -->
+							<!-- requestURI=/webapp/wcs/stores/ConsumerDirectStorefrontAssetStore/include/AjaxGlobalNavigationView.jsp -->
+
+							<li class="wishlist topLevel"><a title="Wish List"
+								href="http://www.selfridges.com/HK/en/webapp/wcs/stores/servlet/WishListDisplayView?storeId=10052&amp;catalogId=16151&amp;langId=-1">
+									Wish List </a></li>
+
+
+							<li class="bag topLevel" data-delay="0.5">
+								<div class="icon">
+									<a href="" title="Shopping Bag"> Shopping Bag </a>
+									<div class="counter">0</div>
+								</div>
+								<div id="miniShoppingBag" class="miniShoppingBag">
+									<div id="miniInner">
+										<div class="miniHeader">
+											<h3>Shopping bag</h3>
+											<span class="numItems"> <span class="numItemsVal">0
+											</span><span class="numItemsKey">items</span>
+											</span>
+											<div id="miniBagClose">
+												<span class="text">Close</span>
+											</div>
+										</div>
+										<div class="topSeparator"></div>
+										<div class="empty">Fill me up.</div>
+										<div id="mini_bag_espot_no_products">
+											<div class="eMarketingSpot"></div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="search topLevel">
+
+								<form class="searchForm"
+									action="http://www.selfridges.com/HK/en/webapp/wcs/stores/servlet/FhBrowse?storeId=10052&amp;catalogId=16151&amp;langId=-1"
+									method="get" data-autosuggest="True" autocomplete="off">
+									<input type="text" name="freeText" class="searchInput"
+										placeholder="Search Selfridges..." autocomplete="off">
+									<input type="hidden" value="Y" name="srch">
+									<div class="searchOptions"></div>
+								</form> <a
+								href="http://www.selfridges.com/HK/en/webapp/wcs/stores/servlet/FhBrowse?storeId=10052&amp;catalogId=16151&amp;langId=-1"
+								class="searchIcon" title="Search Selfridges..."> Search </a>
+							</li>
+						</ul>
+					</div>
+					<div class="show-on-mobile">
+						<ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
