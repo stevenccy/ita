@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>電商首頁</title>
-<%@ include file="public.jspf"%>
+<%@ include file="WEB-INF/public.jspf"%>
 </head>
 <body>
 	<table width="700" border="1">

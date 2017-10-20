@@ -1,11 +1,17 @@
 package cn.oocl.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable{
 	// model, Product <==> oracle table, object maps to one record in orable
 	// table
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private String id;
 

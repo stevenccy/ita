@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<%@ include file="/public.jspf"%>
+<%@ include file="/WEB-INF/public.jspf"%>
 <title>查詢商品</title>
 </head>
 <body>

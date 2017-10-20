@@ -3,7 +3,9 @@
 <html>
 <head>
 <title>電商首頁</title>
-<%@ include file="public.jspf"%>
+<%@ include file="WEB-INF/public.jspf"%>
+<%@ include file="WEB-INF/login.jspf"%>
+
 </head>
 
 <body>
@@ -49,26 +51,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true"
-		style="display: none;">
-		<div class="modal-dialog">
-			<div class="loginmodal-container">
-				<h1>Login to Your Account</h1>
-				<br>
-				<form>
-					<input type="text" name="user" placeholder="Username"> <input
-						type="password" name="pass" placeholder="Password"> <input
-						type="submit" name="login" class="login loginmodal-submit"
-						value="Login">
-				</form>
-
-				<div class="login-help">
-					<a href="#">Register</a> - <a href="#">Forgot Password</a>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<div class="main-navigation">
 		<nav class="navbar navbar-fixed-top nav-scroll">
 		<div class="container">
@@ -85,7 +68,7 @@
 				<div class="collapse navbar-collapse" id="js-navbar-menu">
 					<ul class="nav navbar-nav navbar-right ep-mobile-menu"
 						id="navbar-nav">
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index.jsp">Home</a></li>
 						<li class="active"><a href="shop-page.html">Shop</a></li>
 						<li><a href="single-shop.html">Single Product</a></li>
 						<li><a href="">About</a></li>

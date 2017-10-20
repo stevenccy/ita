@@ -73,9 +73,9 @@ public class UserServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		if (userService.login(user,"admin")>0){
-			session.setAttribute("user_type", "admin");	
+			session.setAttribute("user", user);	
 		}else{
-			session.setAttribute("user_type", null);
+			session.setAttribute("user", user);
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/admin.jsp");
 		dispatcher.forward(request, response);

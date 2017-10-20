@@ -54,6 +54,17 @@ public class ProductServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/update.jsp");
 		dispatcher.forward(request, response);
 	}
+	
+	private void detail(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+
+		Product product = productService.getById(id);
+
+		request.setAttribute("product", product);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/detail.jsp");
+		dispatcher.forward(request, response);
+	}
 
 	protected void save(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Product product = new Product();

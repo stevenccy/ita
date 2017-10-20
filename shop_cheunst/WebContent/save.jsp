@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>添加商品</title>
-<%@include file="/public.jspf"%>
+<%@include file="/WEB-INF/public.jspf"%>
 </head>
 <body>
 	<!-- 
