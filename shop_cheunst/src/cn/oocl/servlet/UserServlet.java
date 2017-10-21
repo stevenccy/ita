@@ -72,7 +72,7 @@ public class UserServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		if (userService.login(user,"admin")>0){
+		if (userService.login(user,"admin")!=null){
 			session.setAttribute("user", user);	
 		}else{
 			session.setAttribute("user", user);

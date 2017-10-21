@@ -51,7 +51,7 @@ public class ProductServlet extends HttpServlet {
 		Product product = productService.getById(id);
 
 		request.setAttribute("product", product);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/update.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("${shop}/admin/admin_update.jsp");
 		dispatcher.forward(request, response);
 	}
 	
