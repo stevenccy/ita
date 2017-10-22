@@ -46,7 +46,7 @@ public class LoginFilter implements Filter {
 		HttpServletResponse res = (HttpServletResponse) response;
 		User user =(User) req.getSession().getAttribute("user");
 		
-		if (user!=null && !"admin".equals(user.getRole())) {
+		if (user ==null || !"admin".equals(user.getRole())) {
 			res.sendRedirect(req.getContextPath() + "/login.jsp");
 		} else {
 			chain.doFilter(request, response);

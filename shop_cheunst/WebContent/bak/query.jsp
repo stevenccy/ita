@@ -11,6 +11,6 @@
 <title>查詢商品</title>
 </head>
 <body>
-	<%@ include file="/menu2.jspf"%>
+	<%@ include file="/bak/menu2.jspf"%>
 </body>
 </html>

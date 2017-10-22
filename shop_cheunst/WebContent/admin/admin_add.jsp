@@ -13,9 +13,6 @@
 	crossorigin="anonymous">
 <link href="${shop}/css/admin_style.css" rel="stylesheet">
 <body class="home">
-	<c:out value="${user}" />
-	<c:out value="${sessionScope}" />
-
 	<div class="container-fluid display-table">
 		<div class="row display-table-row">
 			<div
@@ -103,10 +100,8 @@
 										<ul class="dropdown-menu">
 											<li>
 												<div class="navbar-content">
-													<span>"${user.name}"</span>
-													<p class="text-muted small">me@jskrishna.com</p>
-													<div class="divider"></div>
-													<a href="#" class="view btn-sm active">View Profile</a>
+													<span>User: ${user.user_name}</span></br>
+													<span>Role: ${user.role}</span>
 												</div>
 											</li>
 										</ul></li>
@@ -116,7 +111,8 @@
 					</header>
 				</div>
 				<div class="user-dashboard">
-					<h1>Hello, JS</h1>
+					<h1>Add Item</h1>
+					<h3>Welcome ${user.user_name}.</h3>
 					<div class="container" style="margin-top: 10px">
 						<form class="form-horizontal" action="${shop}/ProductServlet"
 							method="post">

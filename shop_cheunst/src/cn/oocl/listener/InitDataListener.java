@@ -42,14 +42,12 @@ public class InitDataListener implements ServletContextListener {
 		ServletContext application = event.getServletContext();
 		application.setAttribute("catList", catList);
 		
-		catList = categoryService.queryByHot("Y");
+		catList = categoryService.queryByHot("T");
 		List<List<Product>> bigList = new ArrayList<List<Product>>();
-		for (Category category:categoryService.queryByHot("Y")){
+		for (Category category:categoryService.queryByHot("T")){
 			bigList.add(productService.queryByCid(category.getId()));
 		}
 		application.setAttribute("bigList", bigList);
-		System.out.println(bigList);
-		
-		
+		System.out.println(bigList);		
 	}
 }

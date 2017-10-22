@@ -10,7 +10,7 @@ public class Product {
 
 	// 1: 获取*.class文件中的所有信息(属性,方法)
 	private String id;
-	
+
 	private String name;
 
 	private BigDecimal price;
@@ -18,9 +18,11 @@ public class Product {
 	private String remark;
 
 	private Date pdate;
+	
+	private String imgurl;
 	// 所属的类别对象
 	private Category category;
-	
+
 	public Category getCategory() {
 		return category;
 	}
@@ -73,6 +75,14 @@ public class Product {
 
 	public void setpdate(Date pDate) {
 		this.pdate = pDate;
+	}
+
+	public String getImgurl() {
+		return imgurl;
+	}
+
+	public void setImgurl(String imgurl) {
+		this.imgurl = imgurl;
 	}
 
 }

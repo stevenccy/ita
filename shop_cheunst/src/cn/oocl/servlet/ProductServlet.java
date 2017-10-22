@@ -51,7 +51,7 @@ public class ProductServlet extends HttpServlet {
 		Product product = productService.getById(id);
 
 		request.setAttribute("product", product);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("${shop}/admin/admin_update.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/admin_update.jsp");
 		dispatcher.forward(request, response);
 	}
 	
@@ -82,7 +82,7 @@ public class ProductServlet extends HttpServlet {
 		product.setRemark(request.getParameter("remark"));
 		product.setCategory(new Category(request.getParameter("cid"), null));
 		productService.update(product);
-		response.sendRedirect(request.getContextPath() + "/query.jsp");
+		response.sendRedirect(request.getContextPath() + "/admin/admin_query.jsp");
 	}
 
 	protected void delete(HttpServletRequest request, HttpServletResponse response)
@@ -127,7 +127,7 @@ public class ProductServlet extends HttpServlet {
 		List<Product> proList = productService.queryByName(keyword,currentPage , Integer.parseInt(pageSize));		
 		request.setAttribute("proList", proList);
 		// servlet -->jsp 訪問所有資料都要，如果沒有，就是自帶的
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/query.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/admin_query.jsp");
 		dispatcher.forward(request, response);
 	}
 

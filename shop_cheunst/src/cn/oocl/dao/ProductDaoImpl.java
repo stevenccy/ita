@@ -34,8 +34,9 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> {
 				product.setId(rs.getString(1));
 				product.setName(rs.getString(2));
 				product.setPrice(rs.getBigDecimal(3));
-				product.setRemark(rs.getString(5));
-				product.setpdate(rs.getDate(6));
+				product.setRemark(rs.getString(4));
+				product.setpdate(rs.getDate(5));
+				product.setImgurl(rs.getString(7));
 				Category category = new Category();
 				category.setId(rs.getString(8));
 				category.setName(rs.getString(9));
@@ -55,8 +56,8 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> {
 				product.setId(rs.getString(1));
 				product.setName(rs.getString(2));
 				product.setPrice(rs.getBigDecimal(3));
-				product.setRemark(rs.getString(5));
-				product.setpdate(rs.getDate(6));
+				product.setRemark(rs.getString(4));
+				product.setpdate(rs.getDate(5));
 				Category category = new Category();
 				category.setId(rs.getString(8));
 				category.setName(rs.getString(9));

@@ -69,16 +69,16 @@ public class UserServlet extends HttpServlet {
 		user.setUser_name(request.getParameter("user_name"));
 		user.setPassword(request.getParameter("password"));
 		user.setRole(request.getParameter("role"));
-		
-		HttpSession session = request.getSession();
-		
+				
 		if (userService.login(user,"admin")!=null){
-			session.setAttribute("user", user);	
+			request.getSession().setAttribute("user", user);	
+			response.sendRedirect(request.getContextPath() + "/admin/admin_add.jsp");
+
 		}else{
-			session.setAttribute("user", user);
+			request.getSession().setAttribute("user", null);
+			request.getSession().setAttribute("error", "Login failed.");	
+			request.getRequestDispatcher("/login.jsp").forward(request, response);
 		}
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/admin.jsp");
-		dispatcher.forward(request, response);
 	}
 
 }
