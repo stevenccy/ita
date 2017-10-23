@@ -10,7 +10,7 @@ import cn.oocl.model.Product;
 public class ProductDaoImpl extends BaseDaoImpl<Product> {
 
 	public Product getById(String id) {
-		String sql = "Select id,name,price,remark From Product_cheunst Where id = ?";
+		String sql = "Select id,name,price,remark,imgurl From Product_cheunst Where id = ?";
 		return super.getById(sql, id, Product.class);
 	}
 

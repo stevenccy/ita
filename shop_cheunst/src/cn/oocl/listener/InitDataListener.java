@@ -37,6 +37,15 @@ public class InitDataListener implements ServletContextListener {
 	 */
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
+		/*
+		 * +ve:
+		 * create one instance --> user visit index will get these item
+		 * --> save it in the local when start up --> 
+		 * -ve:
+		 * not refresh when new item --> timer--> create thread 
+		 * not unique when multiple tomcat
+		 * solution : redis (singleton) --> as cache to solve this problem.
+		 */
 		System.out.println("Web container create now, will create");
 		List<Category> catList = categoryService.queryAll();
 		ServletContext application = event.getServletContext();

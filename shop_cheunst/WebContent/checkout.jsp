@@ -73,7 +73,6 @@
 	<header id="xt-home" class="xt-header">
 		<div class="header-top">
 			<div class="container">
-
 				<div class="xt-language col-md-6 col-sm-6 col-xs-12">
 					<div class="each-nav">
 						<ul>
@@ -98,6 +97,7 @@
 						</ul>
 					</div>
 				</div>
+
 				<div class="user-nav pull-right col-md-6 col-sm-6 col-xs-12">
 					<ul>
 						<li><a href="">My wishlist</a></li>
@@ -107,6 +107,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="main-navigation">
 			<nav class="navbar navbar-fixed-top nav-scroll">
 				<div class="container">
@@ -119,13 +120,13 @@
 							<a class="navbar-brand" href="index.jsp"><img
 								src="assets/images/flogo.png" alt="" class="img-responsive"></a>
 						</div>
+
 						<div class="collapse navbar-collapse" id="js-navbar-menu">
 							<ul class="nav navbar-nav navbar-right ep-mobile-menu"
 								id="navbar-nav">
 								<li><a href="index.jsp">Home</a></li>
 								<li><a href="shop-page.html">Shop</a></li>
-								<li class="active"><a href="single-shop.html">Single
-										Product</a></li>
+								<li><a href="single-shop.html">Single Product</a></li>
 								<li><a href="">About</a></li>
 								<li class="dropdown xt-drop-nav"><a href=""
 									class="dropdown-toggle" data-toggle="dropdown"
@@ -163,142 +164,23 @@
 				<div class="row">
 					<div class="col-md-3 left-menu-wrapper">
 						<div class="xt-sidenav hidden-xs hidden-sm">
-							<nav>
-								<ul class="xt-side-menu">
-									<li><a href="#">All Category</a>
-										<ul class="xt-dropdown">
-											<li><a class="xt-nav-link" href="single-shop.html"><i
-													class="fa flaticon-glasses"></i> FASHION</a>
-												<ul class="mega-menu">
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Bags</a></li>
-															<li><a href="single-shop.html">Funky</a></li>
-															<li><a href="single-shop.html">Ear Wear</a></li>
-															<li><a href="single-shop.html">Shoes</a></li>
-															<li><a href="single-shop.html">Cosmetic</a></li>
-														</ul>
-													</li>
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Shirt</a></li>
-															<li><a href="single-shop.html">Pant</a></li>
-															<li><a href="single-shop.html">Trousers</a></li>
-															<li><a href="single-shop.html">Jackets & sweater</a></li>
-															<li><a href="single-shop.html">T-Shirts</a></li>
-														</ul>
-													</li>
-												</ul></li>
-											<li><a class="xt-nav-link" href="single-shop.html"><i
-													class="fa flaticon-dress"></i> WOMEN'S</a>
-												<ul class="mega-menu">
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Accessories</a></li>
-															<li><a href="single-shop.html">Ornaments</a></li>
-															<li><a href="single-shop.html">Shoes</a></li>
-															<li><a href="single-shop.html">3 Piece</a></li>
-															<li><a href="single-shop.html">Cosmetic</a></li>
-														</ul>
-													</li>
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Ring</a></li>
-															<li><a href="single-shop.html">Bags</a></li>
-															<li><a href="single-shop.html">Ear Wear</a></li>
-															<li><a href="single-shop.html">Storage</a></li>
-															<li><a href="single-shop.html">Office</a></li>
-														</ul>
-													</li>
-												</ul></li>
-											<li><a href="single-shop.html"><i
-													class="fa flaticon-high-heel"></i> SHOES</a></li>
-											<li><a class="xt-nav-link" href="single-shop.html"><i
-													class="fa flaticon-v-neck-shirt"></i> MAN'S</a>
-												<ul class="mega-menu xt-column">
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Jeans Pant</a></li>
-															<li><a href="single-shop.html">T-Shirts</a></li>
-															<li><a href="single-shop.html">Pant</a></li>
-															<li><a href="single-shop.html">Jackets</a></li>
-															<li><a href="single-shop.html">Cap</a></li>
-														</ul>
-													</li>
-												</ul></li>
-											<li><a href="single-shop.html"><i
-													class="fa flaticon-jacket"></i> JACKETS</a></li>
-											<li><a class="xt-nav-link" href="single-shop.html"><i
-													class="fa flaticon-cosmetics"></i> COSMETICS</a>
-												<ul class="mega-menu xt-column">
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Lipstick</a></li>
-															<li><a href="single-shop.html">Makeup Brush</a></li>
-															<li><a href="single-shop.html">Nail Polish</a></li>
-															<li><a href="single-shop.html"> Hair Dryers</a></li>
-														</ul>
-													</li>
-												</ul></li>
-											<li><a class="xt-nav-link" href="single-shop.html"><i
-													class="fa flaticon-hijab"></i>BOURKHA & HIJAB</a>
-												<ul class="mega-menu xt-column">
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Iranian</a></li>
-															<li><a href="single-shop.html">Arabian</a></li>
-															<li><a href="single-shop.html">Indian</a></li>
-															<li><a href="single-shop.html">Indonesian</a></li>
-														</ul>
-													</li>
-												</ul></li>
-											<li><a class="xt-nav-link" href="single-shop.html"><i
-													class="fa flaticon-jacket-1"></i>Coats & Gilets</a>
-												<ul class="mega-menu xt-column">
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">German Coats</a></li>
-															<li><a href="single-shop.html">Bangladeshi
-																	Blezzar</a></li>
-															<li><a href="single-shop.html">Thailand Gilets</a></li>
-															<li><a href="single-shop.html">Indian Coats</a></li>
-														</ul>
-													</li>
-												</ul></li>
-											<li><a href="single-shop.html"><i
-													class="fa flaticon-dress-1"></i>Boutique</a></li>
-											<li><a href="#more-list"> <i
-													class="fa flaticon-menu"></i> More Categories
-											</a></li>
-										</ul></li>
-								</ul>
-							</nav>
+							<nav></nav>
 						</div>
 					</div>
+
 					<div class="col-md-8 col-sm-10 col-xs-12 xt-header-search">
 						<div
 							class="form-group xt-form search-bar  col-md-8 col-sm-8 col-xs-7 padding-right-o">
 							<input type="text" class="form-control"
-								placeholder="Search for snippets" />
+								placeholder="Search for snippets">
 						</div>
 						<div
 							class="form-group xt-form xt-search-cat col-md-4 col-sm-4 col-xs-5 padding-left-o ">
 							<div class="xt-select xt-search-opt">
-								<select class="xt-dropdown-search select-beast">
-									<option>All Categories</option>
-									<option>Boutique</option>
-									<option>Shirt</option>
-									<option>Pants</option>
-									<option>Jeans</option>
-									<option>Bourkha</option>
-									<option>Hijab</option>
-									<option>T-Shirt</option>
-									<option>Coats</option>
-									<option>Blezzar</option>
-									<option>Gilets</option>
-									<option>3 Piece</option>
-									<option>Cosmetic</option>
-								</select>
+								<select class="xt-dropdown-search select-beast selectized"
+									tabindex="-1" style="display: none;"><option
+										value="All Categories" selected="selected">All
+										Categories</option></select>
 							</div>
 							<div class="xt-search-opt xt-search-btn">
 								<button type="button" class="btn btn-primary btn-search">
@@ -315,24 +197,24 @@
 										class="fa flaticon-shopping-cart"></i>
 								</a>
 									<ul class="dropdown-menu xt-cart-items">
-									<c:forEach items="${sessionScope.order.itemList}"
-										var="orderItem">
-										<li>
-										<a
-											href="${shop}/ProductServlet?type=detail&id=${orderItem.product.id}">
-												<img src="${orderItem.product.imgurl}" alt=""
+										<c:forEach items="${sessionScope.order.itemList}"
+											var="orderItem">
+											<li><a
+												href="${shop}/ProductServlet?type=detail&id=${orderItem.product.id}">
+													<img src="${orderItem.product.imgurl}" alt=""
 													style=" max-width:80px; max-height:80px; width: auto; height: auto;">
-												<h3>${orderItem.name}</h3> <span class="cart-price">${orderItem.number}
-													X $${orderItem.price}</span>
+													<h3>${orderItem.name}</h3> <span class="cart-price">${orderItem.number}
+														X $${orderItem.price}</span>
+											</a></li>
+										</c:forEach>
+										<li><a href="#" class="subtotal top-checkout">
+												<h3>Subtotal :</h3> <span class="total-price">$${sessionScope.order.total}</span>
 										</a></li>
-									</c:forEach>
-									<li><a href="" class="subtotal top-checkout">
-											<h3>Subtotal :</h3> <span class="total-price">$${sessionScope.order.total}</span>
-									</a></li>
-									<li><a href="checkout.jsp" class="process top-checkout">
-											<h3>Process to Checkout</h3>
-									</a></li>
-								</ul></li>
+										<li><a href="#" class="process top-checkout">
+												<h3>Process to Checkout</h3>
+										</a></li>
+									</ul></li>
+
 							</ul>
 							<span class="xt-item-count">${fn:length(sessionScope.order.itemList)}</span>
 						</div>
@@ -340,6 +222,7 @@
 				</div>
 			</div>
 		</div>
+
 	</header>
 	<!--
         |========================
@@ -351,7 +234,7 @@
 			<div class="row">
 				<div class="mobile-menu-area visible-xs visible-sm">
 					<div class="mobile-menu">
-						<nav id="mobile-menu-active">
+						<nav id="mobile-menu-active" style="display: block;">
 							<ul class="main">
 								<li><a class="main-a" href="">Shirt</a></li>
 								<li><a class="main-a" href="">Pant</a></li>
@@ -363,7 +246,7 @@
 											<ul>
 												<li><a href="#">T-Shirt</a></li>
 												<li><a href="#">Trousers</a></li>
-												<li><a href="#">Jackets & sweater</a></li>
+												<li><a href="#">Jackets &amp; sweater</a></li>
 												<li><a href="#">3 Piece</a></li>
 											</ul></li>
 									</ul></li>
@@ -376,6 +259,7 @@
 			</div>
 		</div>
 	</div>
+
 	<!--
         |========================
         |   PRODUCT DESCRIPTION
@@ -383,127 +267,116 @@
         -->
 	<section class="xt-xt-single-product">
 		<div class="container">
+
 			<div class="row">
 				<div class="col-md-3 visible-xs visible-sm padding-right-o"></div>
-				<div class="col-md-9 col-md-offset-3 padding-o">
+				<div class="col-md-9 padding-o">
 					<div class="xt-product-inner">
-						<div class="col-md-5">
-							<div role="tabpanel" class="tab-pane active xt-product-tab">
-								<div class="tab-content xt-pro-small-image">
-									<!-- Tab panel-->
-									<div role="tabpanel" id="xt-pro-3"
-										class="tab-pane fade active in">
-										<a class="grouped_elements" data-fancybox="gallery"
-											href="${requestScope.product.imgurl}"> <img
-											src="${requestScope.product.imgurl}" alt="" class="img-responsive">
-										</a>
-									</div>
+
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 col-md-10 col-md-offset-1">
+									<table class="table table-hover">
+										<thead>
+											<tr>
+												<th>Product</th>
+												<th>Quantity</th>
+												<th class="text-center">Price</th>
+												<th class="text-center">Total</th>
+												<th>&nbsp;</th>
+											</tr>
+										</thead>
+										<tbody>
+											<c:forEach items="${sessionScope.order.itemList}"
+												var="orderItem">
+												<tr>
+													<td class="col-sm-8 col-md-6">
+
+														<div class="media">
+															<a class="thumbnail pull-left" href="#"> <img
+																class="media-object" src="${orderItem.product.imgurl}"
+																style="max-width: 120px; max-height: 120px;">
+															</a>
+															<div class="media-body">
+																<h4 class="media-heading">
+																	<a href="#">${orderItem.name}</a>
+																</h4>
+																<span>Status: </span><span class="text-success"><strong>In
+																		Stock</strong></span>
+															</div>
+														</div>
+													</td>
+													<td class="col-sm-1 col-md-1" style="text-align: center">
+														<input type="email" class="form-control"
+														id="exampleInputEmail1" value="${orderItem.number}">
+													</td>
+													<td class="col-sm-1 col-md-1 text-center"><strong>$${orderItem.price}</strong></td>
+													<td class="col-sm-1 col-md-1 text-center"><strong>$${orderItem.price*orderItem.number}</strong></td>
+													<td class="col-sm-1 col-md-1">
+														<button type="button" class="btn btn-danger">
+															<span class="glyphicon glyphicon-remove"></span> Remove
+														</button>
+													</td>
+												</tr>
+											</c:forEach>
+											<tr>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td>
+													<h5>Subtotal</h5>
+												</td>
+												<td class="text-right">
+													<h5>
+														<strong>$${sessionScope.order.total}</strong>
+													</h5>
+												</td>
+											</tr>
+											<tr>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td>
+													<h3>Total</h3>
+												</td>
+												<td class="text-right">
+													<h3>
+														<strong>$${sessionScope.order.total}</strong>
+													</h3>
+												</td>
+											</tr>
+											<tr>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td>
+													<button type="button" class="btn btn-default">
+														<span class="glyphicon glyphicon-shopping-cart"></span>
+														Continue Shopping
+													</button>
+												</td>
+												<td>
+													<button type="button" class="btn btn-success">
+														Checkout <span class="glyphicon glyphicon-play"></span>
+													</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
-								<!-- Nav tabs -->
-								<ul id="tablist" class="xt-pro-thumbs-list" role="tablist">
-									<li role="presentation" class="active"><a href="#xt-pro-3"
-										role="tab" data-toggle="tab" aria-expanded="true"> <img
-											src="${requestScope.product.imgurl}" alt="product thumbs">
-									</a></li>
-								</ul>
 							</div>
 						</div>
-						<div class="col-md-7">
-							<div class="each-product-info">
-								<h3>${requestScope.product.name}</h3>
-								<span class="single-price"><b>Current Price:</b>
-									$${requestScope.product.price}</span>
-								<p>${requestScope.product.remark}</p>
-								<!--  
-								<div class="color-select">
-									Color:
-									<ul>
-										<li class="red-bg selected"><i class="fa fa-check"></i></li>
-										<li class="green-bg"><i class="fa fa-check"></i></li>
-										<li class="blue-bg"><i class="fa fa-check"></i></li>
-									</ul>
-								</div>
-								<div class="select-size">
-									Size:
-									<ul>
-										<li class="selected">M</li>
-										<li>L</li>
-										<li>XL</li>
-									</ul>
-								</div>
-								-->
-								<div class="select-quantity">
-									<input type="number" step="1" name="quantity" value="1"
-										title="Qty" class="input-text qty text" size="4">
-								</div>
-								<div class="product-add-cart">
-									<a href="" class="btn btn-fill">Add to cart</a> <a href=""
-										class="btn liked "><i class="fa fa-heart-o xt-no-color"></i><i
-										class="fa fa-heart xt-color"></i></a>
-								</div>
-								<!--  
-								<div class="product-additional-info">
-									<ul>
-										<li><b>Sku:</b>P001</li>
-										<li><b>Category:</b><a href="">Fashion & clothings</a>, <a
-											href="">Women</a></li>
-										<li><b>Tag:</b> <a href="">Rib</a>, <a href="">Neck</a></li>
-									</ul>
-								</div>
-								-->
-							</div>
-						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
 	<div class="clearfix"></div>
-	<div class="xt-product-description">
-		<div class="container">
-			<div class="row section-separator">
-				<aside class="col-md-3"></aside>
-				<div class="col-md-9">
-					<div class="xt-single-item-info">
-						<!-- Nav tabs -->
-						<ul class="nav nav-tabs xt-single-item-tab" role="tablist"
-							id="xt-product-dec-nav">
-							<li role="presentation" class="active"><a
-								href="#description" aria-controls="description" role="tab"
-								data-toggle="tab">Description</a></li>
-							<li role="presentation" class=""><a href="#specification"
-								aria-controls="specification" role="tab" data-toggle="tab">Specification</a>
-							</li>
-							<li role="presentation" class=""><a href="#seller"
-								aria-controls="seller" role="tab" data-toggle="tab">Seller
-									info</a></li>
-							<li role="presentation" class=""><a href="#shopping"
-								aria-controls="shopping" role="tab" data-toggle="tab">Shopping</a>
-							</li>
-						</ul>
-						<!-- Tab panes -->
-						<div class="tab-content xt-tab-content">
-							<div role="tabpanel"
-								class="tab-pane xt-pane xt-description fade in active"
-								id="description">
-								<h3>Product Description</h3>
-								<b>Description</b> </br> <span>${requestScope.product.remark }</span>
-							</div>
-							<div role="tabpanel" class="tab-pane xt-pane fade"
-								id="specification">
-								<h3>Product Specification</h3>
-								<p>100% New. Free return.</p>
-							</div>
-							<div role="tabpanel" class="tab-pane xt-pane fade" id="seller">
-								Made in China.</div>
-							<div role="tabpanel" class="tab-pane xt-pane fade" id="shopping">
-								Ships from China. Free Shipping.</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+
+
 	<!--
         |========================
         |      FOOTER
@@ -536,7 +409,7 @@
 										us</a></li>
 								<li><a href=""><i class="fa fa-caret-right"></i>Shopping
 										cart</a></li>
-								<li><a href="checkout.jsp"><i class="fa fa-caret-right"></i>Checkout</a></li>
+								<li><a href="#"><i class="fa fa-caret-right"></i>Checkout</a></li>
 							</ul>
 						</div>
 					</div>
@@ -545,7 +418,7 @@
 							<h4>Custom Service</h4>
 							<ul>
 								<li><a href=""><i class="fa fa-caret-right"></i>Shopping
-										& return</a></li>
+										&amp; return</a></li>
 								<li><a href=""><i class="fa fa-caret-right"></i>Seacure
 										Shopping</a></li>
 								<li><a href=""><i class="fa fa-caret-right"></i>International
@@ -588,7 +461,7 @@
 								<div class="col-md-10">
 									<h4>Safe Payment</h4>
 									<p>Pay with the world’s most popular and secure payment
-										methods.${requestScope.product.imgurl}</p>
+										methods.</p>
 								</div>
 							</div>
 						</div>
@@ -640,11 +513,13 @@
 			</div>
 		</div>
 	</footer>
+
 	<!--
         |========================
         |      Script
         |========================
         -->
+
 	<!-- jquery -->
 	<script src="assets/plugins/js/jquery-1.11.3.min.js"></script>
 	<!-- Bootstrap -->
@@ -673,8 +548,13 @@
 	<script src="assets/plugins/js/standalone/selectize.js"></script>
 	<!-- init -->
 	<script src="assets/js/init.js"></script>
-</body>
 
+
+	<div class="selectize-dropdown single xt-dropdown-search select-beast"
+		style="display: none;">
+		<div class="selectize-dropdown-content"></div>
+	</div>
+</body>
 </html>
 
 

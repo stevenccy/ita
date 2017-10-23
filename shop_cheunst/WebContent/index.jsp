@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<%@include file="/WEB-INF/public.jspf"%>
 <title>電商首頁</title>
 <meta charset="utf-8">
 <meta name="description" content="app landing page template" />
@@ -62,8 +64,7 @@
         |  HEADER
         |========================
         -->
-	<header id="xt-home" class="xt-header"> <c:out
-		value="${applicationScope.bigList}" />
+	<header id="xt-home" class="xt-header">
 	<div class="header-top">
 		<div class="container">
 			<div class="row">
@@ -95,7 +96,7 @@
 				<div class="user-nav pull-right col-md-6 col-sm-6 col-xs-12">
 					<ul>
 						<li><a href="">My wishlist</a></li>
-						<li><a href="">Checkout</a></li>
+						<li><a href="${shop}/checkout.jsp">Checkout</a></li>
 						<li><a href="">login</a></li>
 					</ul>
 				</div>
@@ -311,24 +312,26 @@
 									class="fa flaticon-shopping-cart"></i>
 							</a>
 								<ul class="dropdown-menu xt-cart-items">
-									<li><a href=""> <img src="assets/images/4.jpg" alt="">
-											<h3>Lipstick</h3> <span class="cart-price">$299</span>
-									</a></li>
-									<li><a href=""> <img src="assets/images/1.jpg" alt="">
-											<h3>T-Shirt</h3> <span class="cart-price">$499</span>
-									</a></li>
-									<li><a href=""> <img src="assets/images/3.jpg" alt="">
-											<h3>Shirt</h3> <span class="cart-price">$399</span>
-									</a></li>
+									<c:forEach items="${sessionScope.order.itemList}"
+										var="orderItem">
+										<li><a
+											href="${shop}/ProductServlet?type=detail&id=${orderItem.product.id}">
+												<img src="${orderItem.product.imgurl}" alt=""
+													style=" max-width:80px; max-height:80px; width: auto; height: auto;">
+												<h3>${orderItem.name}</h3> <span class="cart-price">${orderItem.number}
+													X $${orderItem.price}</span>
+										</a></li>
+									</c:forEach>
 									<li><a href="" class="subtotal top-checkout">
-											<h3>Subtotal :</h3> <span class="total-price">$999</span>
+											<h3>Subtotal :</h3> <span class="total-price">$${sessionScope.order.total}</span>
 									</a></li>
 									<li><a href="" class="process top-checkout">
 											<h3>Process to Checkout</h3>
 									</a></li>
 								</ul></li>
 						</ul>
-						<span class="xt-item-count">8</span>
+						<span class="xt-item-count"> ${fn:length(sessionScope.order.itemList)}
+						</span>
 					</div>
 				</div>
 			</div>
@@ -463,8 +466,9 @@
 						<div class="col-md-4 col-sm-4">
 							<div class="xt-feature">
 								<div class="product-img">
-									<img src="${product.imgurl}" alt="" class="img-responsive">
-									<span class="product-tag xt-uppercase">sale!</span>
+									<a href="ProductServlet?type=detail&id=${product.id}"> <img
+										src="${product.imgurl}" alt="" class="img-responsive"></a> <span
+										class="product-tag xt-uppercase">sale!</span>
 								</div>
 								<div class="product-info">
 									<div class="product-title">
@@ -472,8 +476,8 @@
 											class="name xt-semibold">${product.remark}</span>
 									</div>
 									<div class="price-tag pull-right">
-										<span class="old-price"><del>$${product.price+500}</del></span> <span
-											class="new-price xt-semibold">$${product.price}</span>
+										<span class="old-price"><del>$${product.price+500}</del></span>
+										<span class="new-price xt-semibold">$${product.price}</span>
 									</div>
 									<div class="xt-featured-caption">
 										<div class="product-title">
@@ -481,11 +485,12 @@
 												class="name xt-semibold">${product.remark}</span>
 										</div>
 										<div class="price-tag pull-right">
-											<span class="old-price"><del>$${product.price+500}</del></span> <span
-												class="new-price xt-semibold">${product.price}</span>
+											<span class="old-price"><del>$${product.price+500}</del></span>
+											<span class="new-price xt-semibold">${product.price}</span>
 										</div>
 										<div class="add-cart">
-											<a href="" class="btn btn-fill">Add to cart</a>
+											<a href="${shop}/OrderItemServlet?id=${product.id}"
+												class="btn btn-fill">Add to cart</a>
 											<ul class="reaction">
 												<li><a href=""><i class="fa fa-search"></i></a></li>
 												<li><a href=""><i class="fa fa-heart-o"></i></a></li>
@@ -652,57 +657,6 @@
 	</div>
 	</section>
 
-	<!--
-        |========================
-        |  TESTIMONIAL
-        |========================
-        -->
-
-	<section class="xt-testimonial section-separator">
-	<div class="container">
-		<div class="row">
-			<div class="section-title">
-				<h2>clients testimonial</h2>
-				<span class="xt-title-bg"></span>
-			</div>
-
-			<div class="testimonial-content col-xs-12 xt-client-carousel">
-				<div class="xt-clients">
-					<div class="user-img">
-						<img src="assets/images/t3.jpg" alt="" class="img-responsive">
-					</div>
-					<h5>Richard I. Moore</h5>
-					<span>Manager</span>
-					<p>The founder of SEO Monster is so helpful and efficient with
-						any problem you might have. I highly recommend choosing his
-						products. Professional, sexy, sleek, and fun!</p>
-				</div>
-				<div class="xt-clients">
-					<div class="user-img">
-						<img src="assets/images/t3.jpg" alt="" class="img-responsive">
-					</div>
-					<h5>Stephen L. Jacques</h5>
-					<span>C.E.O.</span>
-					<p>The founder of SEO Monster is so helpful and efficient with
-						any problem you might have. I highly recommend choosing his
-						products. Professional, sexy, sleek, and fun!</p>
-				</div>
-				<div class="xt-clients">
-					<div class="user-img">
-						<img src="assets/images/t3.jpg" alt="" class="img-responsive">
-					</div>
-					<h5>Tim C. Cross</h5>
-					<span>H.R. HEAD</span>
-					<p>The founder of SEO Monster is so helpful and efficient with
-						any problem you might have. I highly recommend choosing his
-						products. Professional, sexy, sleek, and fun!</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	</section>
-
-
 
 	<!--
         |========================
@@ -821,28 +775,6 @@
 			</div>
 		</div>
 	</div>
-	<table width="700" border="1">
-		<!-- 此處是大循環用來獲取商品的集合 -->
-		<c:forEach items="${applicationScope.bigList}" var="proList">
-			<tr>
-				<td colspan="4">${proList[0].category.name}</td>
-			</tr>
-			<tr>
-				<!-- 此處小循環,用來顯示每個商品的信息 -->
-				<c:forEach items="${proList}" var="product">
-					<td>
-						<div>
-							<img src="${shop}/img/HK.png" />
-						</div>
-						<div>${product.name}</div>
-						<div>${product.price}</div>
-					</td>
-				</c:forEach>
-				<!-- 小循環結束 -->
-			</tr>
-			<!-- 大循環結束 -->
-		</c:forEach>
-	</table>
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="row section-separator">
