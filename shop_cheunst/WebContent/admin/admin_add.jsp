@@ -136,7 +136,7 @@
 							<div class="form-group">
 								<label class="col-sm-2 control-label">Photo:</label>
 								<div class="col-sm-4">
-									<input type="file" class="form-control" name="imgUrl">
+									<input type="file" class="form-control" name="imgUrl" enctype="multipart/form-data">
 								</div>
 							</div>
 

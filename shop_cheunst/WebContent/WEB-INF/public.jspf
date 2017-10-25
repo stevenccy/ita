@@ -1,7 +1,9 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
+<c:set var="images" value="${pageContext.request.contextPath}/images/" />
 <c:set var="shop" value="${pageContext.request.contextPath}" />
 <link rel="stylesheet" href="${shop}/css/bootstrap.css">
 <link rel="stylesheet" href="${shop}/css/copy.css">

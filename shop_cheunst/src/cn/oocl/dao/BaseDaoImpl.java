@@ -44,7 +44,7 @@ public abstract class BaseDaoImpl<T> {
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		} finally {
-			JdbcUtils.close(con, pre,rs);
+			JdbcUtils.close(null, pre,rs);
 		}
 	}
 	
@@ -71,7 +71,7 @@ public abstract class BaseDaoImpl<T> {
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		} finally {
-			JdbcUtils.close(con, pre, rs);
+			JdbcUtils.close(null, pre, rs);
 		}
 	}
 	protected List<T> queryByName(String sql,Object[] param,RowMapper<T> rowMapper) {
@@ -154,7 +154,7 @@ public abstract class BaseDaoImpl<T> {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
-			JdbcUtils.close(con, pre, rs);
+			JdbcUtils.close(null, pre, rs);
 		}
 	}
 
@@ -200,7 +200,7 @@ public abstract class BaseDaoImpl<T> {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
-			JdbcUtils.close(connection, prepareStatement);
+			JdbcUtils.close(null, prepareStatement);
 		}
 	}
 }

@@ -9,6 +9,7 @@
 <html lang="en">
 
 <head>
+<%@include file="/WEB-INF/public.jspf"%>
 <!-- TITLE OF SITE -->
 <title>eCommerce</title>
 <!-- Meta -->
@@ -123,7 +124,7 @@
 							<ul class="nav navbar-nav navbar-right ep-mobile-menu"
 								id="navbar-nav">
 								<li><a href="index.jsp">Home</a></li>
-								<li><a href="shop-page.html">Shop</a></li>
+								<li><a href="">Shop</a></li>
 								<li class="active"><a href="single-shop.html">Single
 										Product</a></li>
 								<li><a href="">About</a></li>
@@ -395,7 +396,7 @@
 										class="tab-pane fade active in">
 										<a class="grouped_elements" data-fancybox="gallery"
 											href="${requestScope.product.imgurl}"> <img
-											src="${requestScope.product.imgurl}" alt="" class="img-responsive">
+											src="${requestScope.product.imgurl}" alt="" class="img-responsive" >
 										</a>
 									</div>
 								</div>
@@ -403,7 +404,7 @@
 								<ul id="tablist" class="xt-pro-thumbs-list" role="tablist">
 									<li role="presentation" class="active"><a href="#xt-pro-3"
 										role="tab" data-toggle="tab" aria-expanded="true"> <img
-											src="${requestScope.product.imgurl}" alt="product thumbs">
+											src="${requestScope.product.imgurl}" alt="product thumbs" style=" max-width:80px; max-height:80px; width: auto; height: auto;">
 									</a></li>
 								</ul>
 							</div>
@@ -437,7 +438,7 @@
 										title="Qty" class="input-text qty text" size="4">
 								</div>
 								<div class="product-add-cart">
-									<a href="" class="btn btn-fill">Add to cart</a> <a href=""
+									<a href="${shop}/OrderItemServlet?id=${product.id}&type=addOrderItem" class="btn btn-fill">Add to cart</a> <a href="#"
 										class="btn liked "><i class="fa fa-heart-o xt-no-color"></i><i
 										class="fa fa-heart xt-color"></i></a>
 								</div>
@@ -588,7 +589,7 @@
 								<div class="col-md-10">
 									<h4>Safe Payment</h4>
 									<p>Pay with the world’s most popular and secure payment
-										methods.${requestScope.product.imgurl}</p>
+										methods.</p>
 								</div>
 							</div>
 						</div>

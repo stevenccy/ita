@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
 <!DOCTYPE html>
 <!--[if IE 7]> <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
 <!--[if gt IE 8]><!-->
+
+
 <html lang="en">
 
 <head>
 <!-- TITLE OF SITE -->
 <title>eCommerce</title>
 <!-- Meta -->
+<%@include file="/WEB-INF/public.jspf"%>
 <meta charset="utf-8">
 <meta name="description" content="app landing page template" />
 <meta name="keywords"
@@ -63,6 +65,64 @@
             <script src="js/plagin-js/respond.min.js"></script>
         <![endif]-->
 </head>
+<script type="text/javascript">
+	$(function() {
+		$('.btn-danger').click(function() {
+			// 1: 发送当前购买商品的id, parents(tr) 可能会查找到多个tr
+			var pid = $(this).closest("tr").attr('lang');
+			$(this).closest("tr").remove(); // 删除当前td所在的tr
+			$.get('${shop}/OrderItemServlet', {
+				id : pid,
+				type : 'removeOrderItem'
+			}, function(total) {
+				// 2: 购物车在后台删除对应的购物项 (后台实现)
+				// 3: 重新计算总价格 (后台实现)
+				// 4: 返回并更新,新的总价格
+				alert(total);
+				$("#total").html(total);
+				$("#subTotal").html(total);
+			}, 'text');
+		});
+
+		$('.inputNumber').change(
+				function() {
+					var num = $(this).val();
+					console.log('adsdad');
+					// 如果是数字,则更新lang属性,否则还原lang属性的值
+					if (/^[1-9]\d*$/.test(num)) {
+						// 如果数值正确,则替换lang属性的值
+						$(this).attr('lang', num);
+						// 获取当前购物项对应的pid
+						var pid = $(this).closest("tr").attr('lang');
+						// 发送ajax请求更新当前购物项数量
+						var txtTd = $(this).closest("td");
+						console.log(txtTd);
+						$.post('${shop}/OrderItemServlet', {
+							type : 'updateOrderItem',
+							pid : pid,
+							num : num
+						},
+								function(total) {
+									console.log(txtTd.next().children(".price")
+											.text());
+									var price = parseFloat(
+											txtTd.next().children(".price")
+													.text()).toFixed(1);
+									txtTd.next().next().children('.price')
+											.text(
+													parseFloat(price * num)
+															.toFixed(1));
+									alert(total);
+									$("#total").html(total);
+									$("#subTotal").html(total);
+								}, 'text');
+					} else {
+						// lang属性值回显
+						$(this).val($(this).attr('lang'));
+					}
+				});
+	});
+</script>
 
 <body>
 	<!--
@@ -97,7 +157,6 @@
 						</ul>
 					</div>
 				</div>
-
 				<div class="user-nav pull-right col-md-6 col-sm-6 col-xs-12">
 					<ul>
 						<li><a href="">My wishlist</a></li>
@@ -107,7 +166,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="main-navigation">
 			<nav class="navbar navbar-fixed-top nav-scroll">
 				<div class="container">
@@ -120,7 +178,6 @@
 							<a class="navbar-brand" href="index.jsp"><img
 								src="assets/images/flogo.png" alt="" class="img-responsive"></a>
 						</div>
-
 						<div class="collapse navbar-collapse" id="js-navbar-menu">
 							<ul class="nav navbar-nav navbar-right ep-mobile-menu"
 								id="navbar-nav">
@@ -167,7 +224,6 @@
 							<nav></nav>
 						</div>
 					</div>
-
 					<div class="col-md-8 col-sm-10 col-xs-12 xt-header-search">
 						<div
 							class="form-group xt-form search-bar  col-md-8 col-sm-8 col-xs-7 padding-right-o">
@@ -178,9 +234,10 @@
 							class="form-group xt-form xt-search-cat col-md-4 col-sm-4 col-xs-5 padding-left-o ">
 							<div class="xt-select xt-search-opt">
 								<select class="xt-dropdown-search select-beast selectized"
-									tabindex="-1" style="display: none;"><option
-										value="All Categories" selected="selected">All
-										Categories</option></select>
+									tabindex="-1" style="display: none;">
+									<option value="All Categories" selected="selected">All
+										Categories</option>
+								</select>
 							</div>
 							<div class="xt-search-opt xt-search-btn">
 								<button type="button" class="btn btn-primary btn-search">
@@ -199,22 +256,22 @@
 									<ul class="dropdown-menu xt-cart-items">
 										<c:forEach items="${sessionScope.order.itemList}"
 											var="orderItem">
-											<li><a
+											<li lang="${orderItem.product.id}"><a
 												href="${shop}/ProductServlet?type=detail&id=${orderItem.product.id}">
 													<img src="${orderItem.product.imgurl}" alt=""
-													style=" max-width:80px; max-height:80px; width: auto; height: auto;">
+													style="max-width: 80px; max-height: 80px; width: auto; height: auto;">
 													<h3>${orderItem.name}</h3> <span class="cart-price">${orderItem.number}
 														X $${orderItem.price}</span>
 											</a></li>
 										</c:forEach>
 										<li><a href="#" class="subtotal top-checkout">
-												<h3>Subtotal :</h3> <span class="total-price">$${sessionScope.order.total}</span>
+												<h3>Subtotal :</h3> <span class="total-price"
+												id="dropDownSubTotal">$${sessionScope.order.total}</span>
 										</a></li>
 										<li><a href="#" class="process top-checkout">
 												<h3>Process to Checkout</h3>
 										</a></li>
 									</ul></li>
-
 							</ul>
 							<span class="xt-item-count">${fn:length(sessionScope.order.itemList)}</span>
 						</div>
@@ -222,7 +279,6 @@
 				</div>
 			</div>
 		</div>
-
 	</header>
 	<!--
         |========================
@@ -259,7 +315,6 @@
 			</div>
 		</div>
 	</div>
-
 	<!--
         |========================
         |   PRODUCT DESCRIPTION
@@ -267,12 +322,10 @@
         -->
 	<section class="xt-xt-single-product">
 		<div class="container">
-
 			<div class="row">
 				<div class="col-md-3 visible-xs visible-sm padding-right-o"></div>
 				<div class="col-md-9 padding-o">
 					<div class="xt-product-inner">
-
 						<div class="container">
 							<div class="row">
 								<div class="col-sm-12 col-md-10 col-md-offset-1">
@@ -289,9 +342,8 @@
 										<tbody>
 											<c:forEach items="${sessionScope.order.itemList}"
 												var="orderItem">
-												<tr>
+												<tr lang="${orderItem.product.id}">
 													<td class="col-sm-8 col-md-6">
-
 														<div class="media">
 															<a class="thumbnail pull-left" href="#"> <img
 																class="media-object" src="${orderItem.product.imgurl}"
@@ -307,11 +359,13 @@
 														</div>
 													</td>
 													<td class="col-sm-1 col-md-1" style="text-align: center">
-														<input type="email" class="form-control"
-														id="exampleInputEmail1" value="${orderItem.number}">
+														<input type="text" class="inputNumber"
+														value="${orderItem.number}">
 													</td>
-													<td class="col-sm-1 col-md-1 text-center"><strong>$${orderItem.price}</strong></td>
-													<td class="col-sm-1 col-md-1 text-center"><strong>$${orderItem.price*orderItem.number}</strong></td>
+													<td class="col-sm-1 col-md-1 text-center">$<strong
+														class="price">${orderItem.price}</strong></td>
+													<td class="col-sm-1 col-md-1 text-center">$<strong
+														class="price">${orderItem.price*orderItem.number}</strong></td>
 													<td class="col-sm-1 col-md-1">
 														<button type="button" class="btn btn-danger">
 															<span class="glyphicon glyphicon-remove"></span> Remove
@@ -328,7 +382,7 @@
 												</td>
 												<td class="text-right">
 													<h5>
-														<strong>$${sessionScope.order.total}</strong>
+														<strong id="subTotal">$${sessionScope.order.total}</strong>
 													</h5>
 												</td>
 											</tr>
@@ -341,7 +395,7 @@
 												</td>
 												<td class="text-right">
 													<h3>
-														<strong>$${sessionScope.order.total}</strong>
+														<strong id="total">$${sessionScope.order.total}</strong>
 													</h3>
 												</td>
 											</tr>
@@ -366,17 +420,12 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
 	<div class="clearfix"></div>
-
-
-
 	<!--
         |========================
         |      FOOTER
@@ -513,13 +562,11 @@
 			</div>
 		</div>
 	</footer>
-
 	<!--
         |========================
         |      Script
         |========================
         -->
-
 	<!-- jquery -->
 	<script src="assets/plugins/js/jquery-1.11.3.min.js"></script>
 	<!-- Bootstrap -->
@@ -548,14 +595,10 @@
 	<script src="assets/plugins/js/standalone/selectize.js"></script>
 	<!-- init -->
 	<script src="assets/js/init.js"></script>
-
-
 	<div class="selectize-dropdown single xt-dropdown-search select-beast"
 		style="display: none;">
 		<div class="selectize-dropdown-content"></div>
 	</div>
 </body>
+
 </html>
-
-
-

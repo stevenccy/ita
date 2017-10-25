@@ -8,6 +8,8 @@ import java.sql.SQLException;
 
 public class JdbcUtils {
 	
+	private static ThreadLocal<Connection> connLocal = new ThreadLocal<Connection>();
+	
 	private static final String jdbcUrl = PropUtils.getValue("jdbcUrl");
 	private static final String driverName = PropUtils.getValue("driverName");
 	private static final String userName = PropUtils.getValue("username");
@@ -30,8 +32,14 @@ public class JdbcUtils {
 	
 	public static Connection getConnection() {
 		// 
+		Connection connection = connLocal.get();
 		try {
-			return DriverManager.getConnection(jdbcUrl,userName , password);
+			
+			if (connection == null || connection.isClosed()){
+				connection = DriverManager.getConnection(jdbcUrl,userName,password);
+				connLocal.set(connection);
+			}
+			return connection;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

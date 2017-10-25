@@ -1,6 +1,7 @@
 package cn.oocl.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 // 訂單項,存儲了購買商品的信息(訂單項并不是商品對象)
 public class OrderItem implements Serializable {
@@ -13,10 +14,20 @@ public class OrderItem implements Serializable {
 
 	private String name;
 
-	private Double price;
+	private BigDecimal price;
 	// 當前購物項在沒有購買時就是一個商品
 	private Product product;
 	
+	private Order order;
+	
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
 	public Product getProduct() {
 		return product;
 	}
@@ -49,12 +60,12 @@ public class OrderItem implements Serializable {
 		this.name = name;
 	}
 
-	public Double getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
-		this.price = price;
+	public void setPrice(BigDecimal bigDecimal) {
+		this.price = bigDecimal;
 	}
 
 }

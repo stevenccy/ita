@@ -489,7 +489,7 @@
 											<span class="new-price xt-semibold">${product.price}</span>
 										</div>
 										<div class="add-cart">
-											<a href="${shop}/OrderItemServlet?id=${product.id}"
+											<a href="${shop}/OrderItemServlet?id=${product.id}&type=addOrderItem"
 												class="btn btn-fill">Add to cart</a>
 											<ul class="reaction">
 												<li><a href=""><i class="fa fa-search"></i></a></li>

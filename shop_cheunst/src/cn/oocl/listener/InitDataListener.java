@@ -1,5 +1,7 @@
 package cn.oocl.listener;
 
+import java.io.File;
+import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +10,6 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import cn.oocl.dao.ProductDaoImpl;
 import cn.oocl.model.Category;
 import cn.oocl.model.Product;
 import cn.oocl.service.CategoryServiceImpl;
@@ -38,6 +39,8 @@ public class InitDataListener implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
 		/*
+		 * Different type of listener
+		 * 
 		 * +ve:
 		 * create one instance --> user visit index will get these item
 		 * --> save it in the local when start up --> 
@@ -57,6 +60,14 @@ public class InitDataListener implements ServletContextListener {
 			bigList.add(productService.queryByCid(category.getId()));
 		}
 		application.setAttribute("bigList", bigList);
-		System.out.println(bigList);		
+		
+		String [] bankName = new File(application.getRealPath("images/bank")).list(new FilenameFilter(){
+
+			@Override
+			public boolean accept(File dir, String name) {
+				return name.endsWith(".gif");
+			}
+		});
+		application.setAttribute("bankName", bankName);
 	}
 }

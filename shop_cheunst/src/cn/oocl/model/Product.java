@@ -1,11 +1,17 @@
 package cn.oocl.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 // model模型, Product 与  oracle的表对应, 对象对应oracle一条记录  
 
-public class Product {
+public class Product implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1490609714722518511L;
+
 	// 在项目运行的时候,这些属性都在 JVM里面的 Product.class文件中
 
 	// 1: 获取*.class文件中的所有信息(属性,方法)

@@ -1,24 +1,29 @@
 package cn.oocl.servlet;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.ServletSecurityElement;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import cn.oocl.model.Category;
 import cn.oocl.model.Product;
 import cn.oocl.service.ProductService;
+import cn.oocl.utils.FileUploadUtils;
 import cn.oocl.utils.PropUtils;
 
 @WebServlet("/ProductServlet") // 記錄了訪問當前Servlet的URL地址
@@ -71,6 +76,27 @@ public class ProductServlet extends HttpServlet {
 		product.setName(request.getParameter("name"));
 		product.setPrice(new BigDecimal(request.getParameter("price")));
 		product.setRemark(request.getParameter("remark"));
+		
+		Part filePart = request.getPart("image");
+	    String fileName = Paths.get(FileUploadUtils.getSubmittedFileName(filePart)).getFileName().toString(); // MSIE fix.
+	    InputStream fileContent = filePart.getInputStream();
+	    
+	    String outputPath = PropUtils.getValue("imageStore")+fileName;
+	    System.out.println("Output Path -> " +outputPath);
+	    OutputStream outputStream= new FileOutputStream(outputPath);
+	    
+	    byte[] buffer = new byte[1024];
+	        int bytesRead;
+	        //read from is to buffer
+	        while((bytesRead = fileContent.read(buffer)) !=-1){
+	         outputStream.write(buffer, 0, bytesRead);
+	        }
+	        fileContent.close();
+	        //flush OutputStream to write any buffered data to file
+	        outputStream.flush();
+	        outputStream.close();
+	     
+	product.setImgurl(fileName);
 		productService.save(product);
 	}
 
