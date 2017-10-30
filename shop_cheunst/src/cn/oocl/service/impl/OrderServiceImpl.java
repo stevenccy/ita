@@ -1,14 +1,20 @@
-package cn.oocl.service;
+package cn.oocl.service.impl;
 
 import java.math.BigDecimal;
 
-import cn.oocl.dao.OrderDaoImpl;
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import cn.oocl.dao.impl.OrderDaoImpl;
 import cn.oocl.model.Order;
 import cn.oocl.model.OrderItem;
 
 // 用來處理訂單業務邏輯
-public class OrderService {
-	private OrderDaoImpl orderDaoImpl = new OrderDaoImpl();
+@Service
+public class OrderServiceImpl {
+	@Resource
+	private OrderDaoImpl orderDaoImpl;
 
 	public Order addOrder(OrderItem newItem,Order order){
 		// 通過item.product.id判斷購物車中是否有重複的商品
@@ -23,8 +29,8 @@ public class OrderService {
 		}
 		return total;
 	}
-	public int save (Order order){
-		return orderDaoImpl.save(order);
+	public void save (Order order){
+		orderDaoImpl.save(order);
 	}
 	
 	public String getMaxId(){

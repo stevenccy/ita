@@ -3,11 +3,26 @@ package cn.oocl.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 // 訂單項,存儲了購買商品的信息(訂單項并不是商品對象)
+
+@Entity
+@Table(name="orderItem")
 public class OrderItem implements Serializable {
 
 	private static final long serialVersionUID = 6669038488581154327L;
 
+	@Id
+	@GeneratedValue(generator = "orderitem_Seq", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "orderitem_Seq",initialValue=1,allocationSize=1)
 	private String id;
 
 	private Integer number;
@@ -18,6 +33,8 @@ public class OrderItem implements Serializable {
 	// 當前購物項在沒有購買時就是一個商品
 	private Product product;
 	
+	@ManyToOne
+	@JoinColumn(name="oid")
 	private Order order;
 	
 	public Order getOrder() {

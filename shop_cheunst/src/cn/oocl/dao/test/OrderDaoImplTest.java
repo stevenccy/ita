@@ -8,8 +8,8 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import cn.oocl.dao.OrderDaoImpl;
-import cn.oocl.dao.OrderItemDaoImpl;
+import cn.oocl.dao.impl.OrderDaoImpl;
+import cn.oocl.dao.impl.OrderItemDaoImpl;
 import cn.oocl.model.Order;
 import cn.oocl.model.OrderItem;
 import cn.oocl.model.Product;

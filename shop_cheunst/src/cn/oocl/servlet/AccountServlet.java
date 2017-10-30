@@ -6,34 +6,34 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 
+import cn.oocl.model.Account;
 import cn.oocl.model.Category;
 import cn.oocl.model.Product;
-import cn.oocl.model.User;
-import cn.oocl.service.UserService;
+import cn.oocl.service.impl.AccountServiceImpl;
 
 /**
  * Servlet implementation class UserServlet
  */
-@WebServlet("/UserServlet")
-public class UserServlet extends HttpServlet {
+@WebServlet("/AccountServlet")
+public class AccountServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	private UserService userService = new UserService();
+    
+	@Resource
+	private AccountServiceImpl accountService;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserServlet() {
+    public AccountServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -65,12 +65,12 @@ public class UserServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User user = new User();
+		Account user = new Account();
 		user.setUser_name(request.getParameter("user_name"));
 		user.setPassword(request.getParameter("password"));
 		user.setRole(request.getParameter("role"));
 				
-		if (userService.login(user,"admin")!=null){
+		if (accountService.login(user)!=null){
 			request.getSession().setAttribute("user", user);	
 			response.sendRedirect(request.getContextPath() + "/admin/admin_add.jsp");
 

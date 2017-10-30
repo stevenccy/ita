@@ -1,15 +1,21 @@
-package cn.oocl.service;
+package cn.oocl.service.impl;
 
 import java.util.List;
 
-import cn.oocl.dao.OrderItemDaoImpl;
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import cn.oocl.dao.impl.OrderItemDaoImpl;
 import cn.oocl.model.Order;
 import cn.oocl.model.OrderItem;
 
 // 用來處理訂單業務邏輯
+@Service("orderItemService") // 需要在xml中支持註解掃描機制
 public class OrderItemServiceImpl {
 
-	private OrderItemDaoImpl orderItemDaoImpl = new OrderItemDaoImpl();
+	@Resource
+	private OrderItemDaoImpl orderItemDaoImpl;
 
 	public Order removeOrderItem(String pid, Order order) {
 		List<OrderItem> itemList = order.getItemList();
@@ -24,8 +30,8 @@ public class OrderItemServiceImpl {
 		return order;
 	}
 
-	public int save(OrderItem orderItem) {
-		return orderItemDaoImpl.save(orderItem);
+	public void save(OrderItem orderItem) {
+		orderItemDaoImpl.save(orderItem);
 	}
 
 	public Order updateItemNum(String pid, int num, Order order) {

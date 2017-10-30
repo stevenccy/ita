@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import cn.oocl.model.Order;
 import cn.oocl.model.OrderItem;
-import cn.oocl.service.OrderItemServiceImpl;
-import cn.oocl.service.OrderService;
+import cn.oocl.service.impl.OrderItemServiceImpl;
+import cn.oocl.service.impl.OrderServiceImpl;
 import cn.oocl.utils.JdbcUtils;
 
 /**
@@ -23,7 +23,7 @@ import cn.oocl.utils.JdbcUtils;
 public class OrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
      
-	private OrderService orderService = new OrderService();
+	private OrderServiceImpl orderService = new OrderServiceImpl();
 	private OrderItemServiceImpl orderItemServiceImpl = new OrderItemServiceImpl();
 	
     public OrderServlet() {

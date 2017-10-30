@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cn.oocl.model.User;
+import cn.oocl.model.Account;
 
 /**
  * Servlet Filter implementation class LoginFilter
@@ -44,7 +44,7 @@ public class LoginFilter implements Filter {
 		System.out.println("--------LoginFiltering	doFilter-----");
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
-		User user =(User) req.getSession().getAttribute("user");
+		Account user =(Account) req.getSession().getAttribute("user");
 		
 		if (user ==null || !"admin".equals(user.getRole())) {
 			res.sendRedirect(req.getContextPath() + "/login.jsp");

@@ -1,10 +1,21 @@
 package cn.oocl.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 
-public class User implements Serializable{
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity (name="Account")
+@Table(name="account")
+public class Account implements Serializable{
 	// model, Product <==> oracle table, object maps to one record in orable
 	// table
 
@@ -13,6 +24,9 @@ public class User implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(generator = "account_Seq", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "account_Seq",initialValue=1,allocationSize=1)
 	private String id;
 
 	private String user_name;
@@ -21,17 +35,10 @@ public class User implements Serializable{
 
 	private String role;
 
+	@Column(name="pDate",insertable=false,updatable=false)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date pdate;
-
-	private Category category;
-
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
+	
 
 	public String getId() {
 		return id;
