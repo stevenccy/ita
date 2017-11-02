@@ -101,8 +101,8 @@
 										<ul class="dropdown-menu">
 											<li>
 												<div class="navbar-content">
-													<span>User: ${user.user_name}</span></br>
-													<span>Role: ${user.role}</span>
+													<span>User: ${user.user_name}</span></br> <span>Role:
+														${user.role}</span>
 												</div>
 											</li>
 										</ul></li>
@@ -113,13 +113,12 @@
 				</div>
 				<div class="user-dashboard">
 					<div class="container" style="margin-top: 10px">
-						<form class="" action="${shop}/ProductServlet" method="get">
+						<form class="" action="${shop}/ProductController/query.mvc"
+							method="get">
 							<div class="form-group"style:margin:"20px 0px">
 								<input class="flipkart-navbar-input col-xs-11" type="text"
 									placeholder="Search for Products, Brands and more"
-									name="keyword" value="${sessionScope.keyword}"> <input
-									type="hidden" name="type" value="query" /> <input
-									type="hidden" name="currentPage" value="1" />
+									name="keyword" value="${sessionScope.keyword}">
 							</div>
 							<button class="flipkart-navbar-button col-xs-1">
 								<svg width="15px" height="15px">
@@ -128,7 +127,7 @@
                         </svg>
 							</button>
 						</form>
-						<c:if test="${not empty requestScope.proList}">
+						<c:if test="${not empty page.content}">
 							<table class="table table-striped">
 								<tr>
 									<th>ID</th>
@@ -139,8 +138,7 @@
 									<th>Date</th>
 									<th>Action</th>
 								</tr>
-								<c:forEach items="${requestScope.proList}" var="product"
-									varStatus="num">
+								<c:forEach items="${page.content}" var="product" varStatus="num">
 									<tr>
 										<td>${num.count}</td>
 										<td>${product.name}</td>
@@ -150,33 +148,33 @@
 										<td><fmt:formatDate pattern="yyyy-MM-dd"
 												value="${product.pdate}" /></td>
 										<td><a
-											href="${shop}/ProductServlet?type=getById&id=${product.id}">update</a>|<a
-											href="${shop}/ProductServlet?type=delete&id=${product.id}">delete</a></td>
+											href="${shop}/ProductController/getByID.mvc?id=${product.id}">update</a>|<a
+											href="${shop}/ProductController/delete/${product.id}/${page.number-1}">delete</a></td>
 									</tr>
 								</c:forEach>
 							</table>
 							<nav aria-label="Page navigation" style:text-align:centre>
 								<ul class="pagination">
 									<li
-										<c:if test="${pageMap.currentPage==1}">
+										<c:if test="${page.firstPage}">
                 class="disabled"
 </c:if>>
-										<a href="#" aria-label="Previous"> <span
+										<a href="${shop}/ProductController/pagination.mvc?currentPage=${page.number-1}" aria-label="Previous"> <span
 											aria-hidden="true">&laquo;</span>
 									</a>
 									</li>
-									<c:forEach begin="1" end="${pageMap.pageCount}" var="num">
+									<c:forEach begin="1" end="${page.totalPages}" var="num">
 										<li
-											<c:if test="${pageMap.currentPage==num}">
+											<c:if test="${page.number==num-1}">
         class="active"
         </c:if>><a
-											href="${shop}/ProductServlet?type=query&currentPage=${num}">${num}</a></li>
+											href="${shop}/ProductController/pagination.mvc?currentPage=${num-1}">${num}</a></li>
 									</c:forEach>
 									<li
-										<c:if test="${pageMap.currentPage==pageMap.pageCount}">
+										<c:if test="${page.lastPage}">
     class="disabled"
     </c:if>>
-										<a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+										<a href="${shop}/ProductController/pagination.mvc?currentPage=${page.number+1}" aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 									</a>
 									</li>
 								</ul>

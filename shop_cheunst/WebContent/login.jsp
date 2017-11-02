@@ -11,12 +11,11 @@
 		<div class="loginmodal-container">
 			<h1>Login to Your Account</h1>
 			<br>
-			<form action="${shop}/UserServlet" method="post">
+			<form action="${shop}/AccountController/login.mvc" method="get">
 				<input type="text" name="user_name" placeholder="Username">
 				<input type="password" name="password" placeholder="Password">
 				<input type="hidden" name="role" value="admin" /> <input
-					type="submit" name="login" class="login loginmodal-submit"
-					value="Login">
+					type="submit" class="login loginmodal-submit">
 			</form>
 
 			<div class="login-help">

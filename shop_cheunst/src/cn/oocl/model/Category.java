@@ -1,5 +1,6 @@
 package cn.oocl.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,8 +18,12 @@ import org.eclipse.persistence.jpa.config.Cascade;
 
 @Entity
 @Table(name="category")
-public class Category {
+public class Category implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6474792555237512942L;
 	@OneToMany(cascade=CascadeType.PERSIST) // default can't insert cascade 
 	@JoinColumn(name="cid")
 	private List<Product> proList = new ArrayList<Product>();

@@ -10,28 +10,12 @@ import org.springframework.data.repository.query.Param;
 
 import cn.oocl.model.Product;
 
-public interface ProductDao extends CrudRepository<Product,String> {
-
+// 在运行时候,会根据当前Dao动态生成DaoImpl,而且DaoImpl的ID名称就是当前dao的类名
+public interface ProductDao extends CrudRepository<Product, String> {
 	
 	@Query ("SELECT p from Product p where p.name like :name")
 	public Page<Product> queryByName (@Param("name") String keyword, Pageable pageable);
 	
-//	Product update(Product product);
-
-//	List<Product> queryName(String name, int currentPage, int size);
-//
-//	List<Product> queryByCid(String cid);
-//
-//	List<Product> queryByName(String name, int currentPage, int size);
-//
-//	Product find(String id);
-//
-//	void delete(String id);
-//
-//	// 更新記錄本質就是更新對象(ORM映射機制)
-//	void update(Product product);
-//
-//	// orm中,以後操作class就是操作table
-//	Product save(Product product);
-
+	@Query("SELECT p FROM Product p WHERE p.category.id = :categoryId")
+	public Iterable <Product> queryByCid(@Param("categoryId") String cid);
 }

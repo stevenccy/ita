@@ -315,8 +315,8 @@
 									<c:forEach items="${sessionScope.order.itemList}"
 										var="orderItem">
 										<li><a
-											href="${shop}/ProductServlet?type=detail&id=${orderItem.product.id}">
-												<img src="${orderItem.product.imgurl}" alt=""
+											href="${shop}/ProductController/detail.mvc?id=${orderItem.product.id}">
+												<img src="${shop }/assets/images/${orderItem.product.imgurl}" alt=""
 													style=" max-width:80px; max-height:80px; width: auto; height: auto;">
 												<h3>${orderItem.name}</h3> <span class="cart-price">${orderItem.number}
 													X $${orderItem.price}</span>
@@ -466,8 +466,8 @@
 						<div class="col-md-4 col-sm-4">
 							<div class="xt-feature">
 								<div class="product-img">
-									<a href="ProductServlet?type=detail&id=${product.id}"> <img
-										src="${product.imgurl}" alt="" class="img-responsive"></a> <span
+									<a href="ProductController/detail.mvc?id=${product.id}"> <img
+										src="${shop}/assets/images/${product.imgurl}" alt="" class="img-responsive"></a> <span
 										class="product-tag xt-uppercase">sale!</span>
 								</div>
 								<div class="product-info">
@@ -489,7 +489,7 @@
 											<span class="new-price xt-semibold">${product.price}</span>
 										</div>
 										<div class="add-cart">
-											<a href="${shop}/OrderItemServlet?id=${product.id}&type=addOrderItem"
+											<a href="${shop}/OrderItemController/addOrderItem?id=${product.id}&type="
 												class="btn btn-fill">Add to cart</a>
 											<ul class="reaction">
 												<li><a href=""><i class="fa fa-search"></i></a></li>

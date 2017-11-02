@@ -6,7 +6,7 @@
 		<div class="loginmodal-container">
 			<h1>Login to Your Account</h1>
 			<br>
-			<form action="${shop}/UserServlet" method="post">
+			<form action="${shop}/AccountController/login.mvc" method="post">
 				<input type="text" name="user_name" placeholder="Username">
 				<input type="password" name="password" placeholder="Password">
 				<input type="hidden" name="role" value="admin" /> <input

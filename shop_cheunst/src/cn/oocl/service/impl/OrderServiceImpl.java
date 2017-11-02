@@ -6,34 +6,30 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import cn.oocl.dao.impl.OrderDaoImpl;
+import cn.oocl.dao.OrderDao;
 import cn.oocl.model.Order;
 import cn.oocl.model.OrderItem;
+import cn.oocl.service.OrderService;
 
-// 用來處理訂單業務邏輯
-@Service
-public class OrderServiceImpl {
-	@Resource
-	private OrderDaoImpl orderDaoImpl;
+//用來處理訂單業務邏輯
+@Service("orderService")
+public class OrderServiceImpl implements OrderService {
+	
+	@Resource(name = "orderDao")
+	private OrderDao orderDao = null;
 
-	public Order addOrder(OrderItem newItem,Order order){
-		// 通過item.product.id判斷購物車中是否有重複的商品
-		return order;
+	@Override
+	public Order save(Order order) {
+		// 在model中已经配置级联入库
+		return orderDao.save(order);
 	}
-	// 通過購物車計算總價格
+
+	@Override
 	public BigDecimal cluTotal(Order order) {
-		BigDecimal total = new BigDecimal(0);
+		BigDecimal total = new BigDecimal(0.0);
 		for (OrderItem item : order.getItemList()) {
-			// 購物項的單機*數量等於總價格
-			total.add(BigDecimal.valueOf(item.getPrice().doubleValue()*(item.getNumber() )));
+			total = total.add(item.getPrice().multiply(new BigDecimal(item.getNumber())));
 		}
 		return total;
-	}
-	public void save (Order order){
-		orderDaoImpl.save(order);
-	}
-	
-	public String getMaxId(){
-		return orderDaoImpl.getMaxId();
 	}
 }

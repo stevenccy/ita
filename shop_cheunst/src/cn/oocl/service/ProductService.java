@@ -1,40 +1,26 @@
 package cn.oocl.service;
 
-import java.util.List;
-
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import cn.oocl.model.Product;
 
 public interface ProductService {
 
-	// -----開啟事務
+
 	public Product save(Product product);
 
-	// 提交事務
 	public Product update(Product product);
-	
-	public Page<Product> queryByName (String keyword, int currentPage, int size);
 
-	long count();
+	public void delete(String id);
 
-	public void delete(Product product);
+	Product getByID(String id);
 
-	void delete(Iterable<? extends Product> arg0);
-
-	void deleteAll();
-
-	boolean exists(String arg0);
-
-	Iterable<Product> findAll();
-
-	Iterable<Product> findAll(Iterable<String> arg0);
-
-	Product findOne(String arg0);
-
-	<S extends Product> Iterable<S> save(Iterable<S> arg0);
-
-	void delete(String id);
-
+	// 查询分页
+	public Page<Product> queryByName(String keyword, int currentPage, int size);
+	@Query("SELECT p FROM Product p WHERE p.category.id = :categoryId")
+	Iterable<Product> queryByCid( String cid);
 
 }

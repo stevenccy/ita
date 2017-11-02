@@ -8,9 +8,9 @@ import org.springframework.data.repository.query.Param;
 
 import cn.oocl.model.Category;
 
-public interface CategoryDao extends CrudRepository<Category,String> {
-
-	@Query ("Select c FROM Category c wher c.hot=:hot")
-	List<Category> queryByHot(@Param("hot") String hot);
+public interface CategoryDao extends CrudRepository<Category, String> {
+	
+	@Query("SELECT c FROM Category c WHERE c.hot = :hot")
+	List<Category> queryByHot(@Param("hot") char hot);
 
 }

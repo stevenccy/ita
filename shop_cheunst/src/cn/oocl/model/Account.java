@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity (name="Account")
+@Entity
 @Table(name="account")
 public class Account implements Serializable{
 	// model, Product <==> oracle table, object maps to one record in orable
@@ -29,17 +29,13 @@ public class Account implements Serializable{
 	@SequenceGenerator(name = "account_Seq",initialValue=1,allocationSize=1)
 	private String id;
 
+	@Column(name = "name")
 	private String user_name;
 
 	private String password;
 
 	private String role;
-
-	@Column(name="pDate",insertable=false,updatable=false)
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date pdate;
 	
-
 	public String getId() {
 		return id;
 	}
@@ -70,14 +66,6 @@ public class Account implements Serializable{
 
 	public void setRole(String role) {
 		this.role = role;
-	}
-
-	public Date getPdate() {
-		return pdate;
-	}
-
-	public void setPdate(Date pdate) {
-		this.pdate = pdate;
 	}
 
 }

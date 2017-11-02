@@ -21,44 +21,44 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 <!-- FAV AND ICONS   -->
-<link rel="shortcut icon" href="assets/images/favicon.ico">
-<link rel="shortcut icon" href="assets/images/apple-icon.png">
+<link rel="shortcut icon" href="${shop}/assets/images/favicon.ico">
+<link rel="shortcut icon" href="${shop}/assets/images/apple-icon.png">
 <link rel="shortcut icon" sizes="72x72"
-	href="assets/images/apple-icon-72x72.png">
+	href="${shop}/assets/images/apple-icon-72x72.png">
 <link rel="shortcut icon" sizes="114x114"
-	href="assets/images/apple-icon-114x114.png">
+	href="${shop}/assets/images/apple-icon-114x114.png">
 <!-- GOOGLE FONTS -->
 <link
 	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7cPlayfair+Display:400,400i,700,900"
 	rel="stylesheet">
 <!-- FONT ICONS -->
 <link rel="stylesheet"
-	href="assets/icons/font-awesome-4.7.0/css/font-awesome.min.css">
+	href="${shop}/assets/icons/font-awesome-4.7.0/css/font-awesome.min.css">
 <!-- Custom Icon Font -->
-<link rel="stylesheet" href="assets/fonts/flaticon.css">
+<link rel="stylesheet" href="${shop}/assets/fonts/flaticon.css">
 <!-- Bootstrap-->
-<link rel="stylesheet" href="assets/plugins/css/bootstrap.min.css">
+<link rel="stylesheet" href="${shop}/assets/plugins/css/bootstrap.min.css">
 <!-- Fancybox-->
-<link rel="stylesheet" href="assets/plugins/css/jquery.fancybox.min.css">
+<link rel="stylesheet" href="${shop}/assets/plugins/css/jquery.fancybox.min.css">
 <!-- Animation -->
-<link rel="stylesheet" href="assets/plugins/css/animate.css">
+<link rel="stylesheet" href="${shop}/assets/plugins/css/animate.css">
 <!-- owl -->
-<link rel="stylesheet" href="assets/plugins/css/owl.css">
+<link rel="stylesheet" href="${shop}/assets/plugins/css/owl.css">
 <!--flexslider-->
-<link rel="stylesheet" href="assets/plugins/css/flexslider.min.css">
+<link rel="stylesheet" href="${shop}/assets/plugins/css/flexslider.min.css">
 <!-- selectize -->
-<link rel="stylesheet" href="assets/plugins/css/selectize.css">
+<link rel="stylesheet" href="${shop}/assets/plugins/css/selectize.css">
 <link rel="stylesheet"
-	href="assets/plugins/css/selectize.bootstrap3.css">
-<link rel="stylesheet" href="assets/plugins/css/jquery-ui.min.css">
+	href="${shop}/assets/plugins/css/selectize.bootstrap3.css">
+<link rel="stylesheet" href="${shop}/assets/plugins/css/jquery-ui.min.css">
 <!--dropdown -->
 <link rel="stylesheet"
-	href="assets/plugins/css/bootstrap-dropdownhover.min.css">
+	href="${shop}/assets/plugins/css/bootstrap-dropdownhover.min.css">
 <!-- mobile nav-->
-<link rel="stylesheet" href="assets/plugins/css/meanmenu.css">
+<link rel="stylesheet" href="${shop}/assets/plugins/css/meanmenu.css">
 <!-- COUSTOM CSS link  -->
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="${shop}/assets/css/style.css">
+<link rel="stylesheet" href="${shop}/assets/css/responsive.css">
 <!--[if lt IE 9]>
             <script src="js/plagin-js/html5shiv.js"></script>
             <script src="js/plagin-js/respond.min.js"></script>
@@ -118,7 +118,7 @@
 								<span aria-hidden="true" class="icon"></span>
 							</button>
 							<a class="navbar-brand" href="index.jsp"><img
-								src="assets/images/flogo.png" alt="" class="img-responsive"></a>
+								src="${shop}/assets/images/flogo.png" alt="" class="img-responsive"></a>
 						</div>
 						<div class="collapse navbar-collapse" id="js-navbar-menu">
 							<ul class="nav navbar-nav navbar-right ep-mobile-menu"
@@ -320,8 +320,8 @@
 										var="orderItem">
 										<li>
 										<a
-											href="${shop}/ProductServlet?type=detail&id=${orderItem.product.id}">
-												<img src="${orderItem.product.imgurl}" alt=""
+											href="${shop}/ProductController/detail.mvc?id=${orderItem.product.id}">
+												<img src="${shop}/assets/images/${orderItem.product.imgurl}" alt=""
 													style=" max-width:80px; max-height:80px; width: auto; height: auto;">
 												<h3>${orderItem.name}</h3> <span class="cart-price">${orderItem.number}
 													X $${orderItem.price}</span>
@@ -395,8 +395,8 @@
 									<div role="tabpanel" id="xt-pro-3"
 										class="tab-pane fade active in">
 										<a class="grouped_elements" data-fancybox="gallery"
-											href="${requestScope.product.imgurl}"> <img
-											src="${requestScope.product.imgurl}" alt="" class="img-responsive" >
+											href="${shop}/assets/images/${requestScope.product.imgurl}"> <img
+											src="${shop}/assets/images/${requestScope.product.imgurl}" alt="" class="img-responsive" >
 										</a>
 									</div>
 								</div>
@@ -404,7 +404,7 @@
 								<ul id="tablist" class="xt-pro-thumbs-list" role="tablist">
 									<li role="presentation" class="active"><a href="#xt-pro-3"
 										role="tab" data-toggle="tab" aria-expanded="true"> <img
-											src="${requestScope.product.imgurl}" alt="product thumbs" style=" max-width:80px; max-height:80px; width: auto; height: auto;">
+											src="${shop}/assets/images/${requestScope.product.imgurl}" alt="product thumbs" style=" max-width:80px; max-height:80px; width: auto; height: auto;">
 									</a></li>
 								</ul>
 							</div>
@@ -438,7 +438,7 @@
 										title="Qty" class="input-text qty text" size="4">
 								</div>
 								<div class="product-add-cart">
-									<a href="${shop}/OrderItemServlet?id=${product.id}&type=addOrderItem" class="btn btn-fill">Add to cart</a> <a href="#"
+									<a href="${shop}/OrderItemController/addOrderItem.mvc?id=${product.id}" class="btn btn-fill">Add to cart</a> <a href="#"
 										class="btn liked "><i class="fa fa-heart-o xt-no-color"></i><i
 										class="fa fa-heart xt-color"></i></a>
 								</div>
@@ -516,7 +516,7 @@
 				<div class="row">
 					<div class="col-md-3 col-sm-3">
 						<div class="footer-widget footer-contact">
-							<img src="assets/images/flogo.png" alt="" class="img-responsive">
+							<img src="${shop}/assets/images/flogo.png" alt="" class="img-responsive">
 							<ul>
 								<li><i class="fa fa-mobile-phone"></i><a href="">+(1234)
 										456 7896</a></li>
@@ -635,7 +635,7 @@
 						</p>
 					</div>
 					<div class="col-md-6 col-sm-6">
-						<img src="assets/images/payment.png" alt="" class="img-responsive">
+						<img src="${shop}/assets/images/payment.png" alt="" class="img-responsive">
 					</div>
 				</div>
 			</div>
@@ -647,33 +647,33 @@
         |========================
         -->
 	<!-- jquery -->
-	<script src="assets/plugins/js/jquery-1.11.3.min.js"></script>
+	<script src="${shop}/assets/plugins/js/jquery-1.11.3.min.js"></script>
 	<!-- Bootstrap -->
-	<script src="assets/plugins/js/bootstrap.min.js"></script>
+	<script src="${shop}/assets/plugins/js/bootstrap.min.js"></script>
 	<!-- mean menu nav-->
-	<script src="assets/plugins/js/meanmenu.js"></script>
+	<script src="${shop}/assets/plugins/js/meanmenu.js"></script>
 	<!-- ajaxchimp -->
-	<script src="assets/plugins/js/jquery.ajaxchimp.min.js"></script>
+	<script src="${shop}/assets/plugins/js/jquery.ajaxchimp.min.js"></script>
 	<!-- wow -->
-	<script src="assets/plugins/js/wow.min.js"></script>
+	<script src="${shop}/assets/plugins/js/wow.min.js"></script>
 	<!-- Owl carousel-->
-	<script src="assets/plugins/js/owl.carousel.js"></script>
+	<script src="${shop}/assets/plugins/js/owl.carousel.js"></script>
 	<!--flexslider-->
-	<script src="assets/plugins/js/jquery.flexslider-min.js"></script>
+	<script src="${shop}/assets/plugins/js/jquery.flexslider-min.js"></script>
 	<!--dropdownhover-->
-	<script src="assets/plugins/js/bootstrap-dropdownhover.min.js"></script>
+	<script src="${shop}/assets/plugins/js/bootstrap-dropdownhover.min.js"></script>
 	<!--jquery-ui.min-->
-	<script src="assets/plugins/js/jquery-ui.min.js"></script>
+	<script src="${shop}/assets/plugins/js/jquery-ui.min.js"></script>
 	<!--validator -->
-	<script src="assets/plugins/js/validator.min.js"></script>
+	<script src="${shop}/assets/plugins/js/validator.min.js"></script>
 	<!--smooth scroll-->
-	<script src="assets/plugins/js/smooth-scroll.js"></script>
+	<script src="${shop}/assets/plugins/js/smooth-scroll.js"></script>
 	<!-- Fancybox js-->
-	<script src="assets/plugins/js/jquery.fancybox.min.js"></script>
+	<script src="${shop}/assets/plugins/js/jquery.fancybox.min.js"></script>
 	<!-- selectize -->
-	<script src="assets/plugins/js/standalone/selectize.js"></script>
+	<script src="${shop}/assets/plugins/js/standalone/selectize.js"></script>
 	<!-- init -->
-	<script src="assets/js/init.js"></script>
+	<script src="${shop}/assets/js/init.js"></script>
 </body>
 
 </html>

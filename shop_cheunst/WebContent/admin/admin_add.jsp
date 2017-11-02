@@ -114,8 +114,8 @@
 					<h1>Add Item</h1>
 					<h3>Welcome ${user.user_name}.</h3>
 					<div class="container" style="margin-top: 10px">
-						<form class="form-horizontal" action="${shop}/ProductServlet"
-							method="post">
+						<form class="form-horizontal" action="${shop}/ProductController/save.mvc"
+							method="post" enctype="multipart/form-data">
 
 							<div class="form-group">
 								<label class="col-sm-2 control-label">Name:</label>
@@ -136,14 +136,14 @@
 							<div class="form-group">
 								<label class="col-sm-2 control-label">Photo:</label>
 								<div class="col-sm-4">
-									<input type="file" class="form-control" name="imgUrl" enctype="multipart/form-data">
+									<input type="file" class="form-control" name="file">
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="col-sm-2 control-label">Category:</label>
 								<div class="col-sm-4">
-									<select class="form-control" name="cid">
+									<select class="form-control" name="category.id">
 										<c:forEach items="${applicationScope.catList}" var="category">
 											<option value="${category.id}">${category.name}</option>
 										</c:forEach>
@@ -161,7 +161,6 @@
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">
 									<button type="submit" class="add-project">Add Product</button>
-									<input type="hidden" name="type" value="save" />
 								</div>
 							</div>
 						</form>

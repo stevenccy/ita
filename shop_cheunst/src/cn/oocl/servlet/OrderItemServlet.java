@@ -16,9 +16,9 @@ import com.google.gson.Gson;
 
 import cn.oocl.model.Order;
 import cn.oocl.model.OrderItem;
+import cn.oocl.service.OrderService;
 import cn.oocl.service.ProductService;
 import cn.oocl.service.impl.OrderItemServiceImpl;
-import cn.oocl.service.impl.OrderServiceImpl;
 import cn.oocl.utils.CookieUtils;
 
 /**
@@ -32,7 +32,7 @@ public class OrderItemServlet extends HttpServlet {
 	// private ProductDaoImpl productDao = ;
 
 	@Resource
-	private OrderServiceImpl orderServiceImpl;
+	private OrderService orderServiceImpl;
 
 	@Resource
 	private OrderItemServiceImpl orderItemServiceImpl;

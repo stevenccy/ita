@@ -1,61 +1,38 @@
 package cn.oocl.dao.test;
 
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.SQLException;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import javax.annotation.Resource;
+
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import cn.oocl.dao.impl.OrderDaoImpl;
-import cn.oocl.dao.impl.OrderItemDaoImpl;
 import cn.oocl.model.Order;
 import cn.oocl.model.OrderItem;
-import cn.oocl.model.Product;
-import cn.oocl.utils.JdbcUtils;
+import cn.oocl.service.OrderService;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "classpath:spring-bean.xml")
 public class OrderDaoImplTest {
+
+	@Resource(name="orderService")
+	private OrderService orderService; 
 	
-	private static OrderDaoImpl orderDaoImpl = null;
-	private static OrderItemDaoImpl orderItemDaoImpl = null;
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-		orderDaoImpl = new OrderDaoImpl();
-		orderItemDaoImpl = new OrderItemDaoImpl();
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-		orderDaoImpl = null;
-		orderItemDaoImpl = null;
-	}
-
-	@Test
-	public void test() throws SQLException {
-		Connection connection = JdbcUtils.getConnection();
-		connection.setAutoCommit(false);
+	@Test // 测试级联入库,并且测试如果出现异常则回滚
+	public void testSave() {
+		// 订单与订单项级联入库: 1: 订单插入成功,则会生成Order ID, 2: OrderItem --->关联Order
 		Order order = new Order();
-		order.setAddress("1232222@gmail.com");
-		order.setPhone("12312312");
-		order.setTotal(new BigDecimal(200));
-		orderDaoImpl.save(order);
-		String id = orderDaoImpl.getMaxId();
-		order.setId(id);
-		
-		OrderItem item = new OrderItem();
-		item.setName("Apple");
-		item.setNumber(1);
-		item.setPrice(new BigDecimal (1000));
-		item.setId(id);
-		
-		
-		Product product = new Product();
-		product.setId("20017001");
-		item.setProduct(product);
-		item.setOrder(order);
-		orderItemDaoImpl.save(item);
-		connection.commit();
+		order.setTotal(new BigDecimal("100.1"));
+		order.setAddress("广东珠海");
+		OrderItem orderItem = new OrderItem();
+		orderItem.setName("购买商品1");
+		orderItem.setNumber(1);
+		orderItem.setPrice(new BigDecimal("100.1"));
+		// 购物项需要关联购物车()
+		orderItem.setOrder(order);
+		order.getItemList().add(orderItem);
+		orderService.save(order);
 	}
-
 }

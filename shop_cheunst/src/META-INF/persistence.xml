@@ -2,19 +2,18 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="shop" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		<class>cn.oocl.model.Product</class>
-		<class>cn.oocl.model.Category</class>
+		<class>cn.oocl.model.Account</class>
 		<class>cn.oocl.model.Order</class>
 		<class>cn.oocl.model.OrderItem</class>
-		<class>cn.oocl.model.Account</class>
-
+		<class>cn.oocl.model.Product</class>
+		<class>cn.oocl.model.Category</class>
 		<properties>
+			<property name="eclipselink.target-server" value="None"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@//hkln456p:1521/testdb.oocl"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
 			<property name="javax.persistence.jdbc.user" value="HKIE11"/>
 			<property name="javax.persistence.jdbc.password" value="hkie11"/>
-			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-			<property name="eclipselink.jdbc.exclusive-connection.mode" value="Always"/>
-			<property name="eclipselink.jdbc.batch-writing" value="Oracle-JDBC"/>
+			<property name="eclipselink.jdbc.exclusive-connection.mode" value="Transactional"/>
 		</properties>
 	</persistence-unit>
 </persistence>
