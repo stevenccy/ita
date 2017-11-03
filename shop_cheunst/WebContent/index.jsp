@@ -77,8 +77,8 @@
 							</a>
 								<ul class="dropdown-menu xt-lang-dropdown">
 									<li><a href="">France</a></li>
-									<li><a href="causes-list.html">Bangla</a></li>
-									<li><a href="causes-details.html">Swidesh</a></li>
+									<li><a href="">Bangla</a></li>
+									<li><a href="">Swidesh</a></li>
 								</ul></li>
 							<li class="dropdown"><a href="" class="dropdown-toggle"
 								data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -86,8 +86,8 @@
 							</a>
 								<ul class="dropdown-menu xt-lang-dropdown">
 									<li><a href="">USD</a></li>
-									<li><a href="causes-list.html">EURO</a></li>
-									<li><a href="causes-details.html">Riyal</a></li>
+									<li><a href="">EURO</a></li>
+									<li><a href="">RMB</a></li>
 								</ul></li>
 						</ul>
 					</div>
@@ -120,34 +120,10 @@
 				<div class="collapse navbar-collapse" id="js-navbar-menu">
 					<ul class="nav navbar-nav navbar-right ep-mobile-menu"
 						id="navbar-nav">
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="shop-page.html">Shop</a></li>
-						<li><a href="single-shop.html">Single Product</a></li>
+						<li class="active"><a href="index.jsp">Home</a></li>
+						<li><a href="contentpage.jsp">Shop</a></li>
 						<li><a href="">About</a></li>
-						<li class="dropdown xt-drop-nav"><a href=""
-							class="dropdown-toggle" data-toggle="dropdown"
-							data-hover="dropdown"> Gallery <span class="caret"></span>
-						</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Electronics</a></li>
-								<li><a href="#">Furniture</a></li>
-								<li class="dropdown"><a href="#">Mobile and Tablets</a>
-									<ul class="dropdown-menu">
-										<li><a href="#">Nokia</a></li>
-										<li><a href="#">iPhone</a></li>
-										<li class="dropdown"><a href="#">Memory Card</a>
-											<ul class="dropdown-menu">
-												<li><a href="#">Max</a></li>
-												<li><a href="#">Min</a></li>
-											</ul></li>
-										<li><a href="#">Computer</a></li>
-										<li><a href="#">Office furniture</a></li>
-									</ul></li>
-								<li><a href="#">Land and space</a></li>
-								<li><a href="#">Bike and Cars</a></li>
-							</ul></li>
-						<li><a href="">Blog</a></li>
-						<li><a href="contact-us.html">Contact</a></li>
+						<li><a href="">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -278,7 +254,8 @@
 						<input type="text" class="form-control"
 							placeholder="Search for snippets" />
 					</div>
-					<div
+					
+										<div
 						class="form-group xt-form xt-search-cat col-md-4 col-sm-4 col-xs-5 padding-left-o ">
 						<div class="xt-select xt-search-opt">
 							<select class="xt-dropdown-search select-beast">
@@ -339,41 +316,7 @@
 	</div>
 
 	</header>
-	<!--
-        |========================
-        |  MOBILE MENU
-        |========================
-        -->
-	<div class="menu-spacing">
-		<div class="container">
-			<div class="row">
-				<div class="mobile-menu-area visible-xs visible-sm">
-					<div class="mobile-menu">
-						<nav id="mobile-menu-active">
-						<ul class="main">
-							<li><a class="main-a" href="">Shirt</a></li>
-							<li><a class="main-a" href="">Pant</a></li>
-							<li class="active"><a class="main-a" href="#">Bourkha</a>
-								<ul>
-									<li><a href="#">Hijab</a></li>
-									<li><a href="#">Scarf</a></li>
-									<li><a href="#" class="main-a">Shirt</a>
-										<ul>
-											<li><a href="#">T-Shirt</a></li>
-											<li><a href="#">Trousers</a></li>
-											<li><a href="#">Jackets & sweater</a></li>
-											<li><a href="#">3 Piece</a></li>
-										</ul></li>
-								</ul></li>
-							<li><a class="main-a" href="">Shawl</a></li>
-							<li><a class="main-a" href="">Other</a></li>
-						</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 
 	<!--
         |========================
@@ -797,8 +740,7 @@
         |      Script
         |========================
         -->
-	<!-- jquery -->
-	<script src="assets/plugins/js/jquery-1.11.3.min.js"></script>
+
 	<!-- Bootstrap -->
 	<script src="assets/plugins/js/bootstrap.min.js"></script>
 	<!-- mean menu nav-->

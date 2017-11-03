@@ -38,20 +38,24 @@
 <!-- Custom Icon Font -->
 <link rel="stylesheet" href="${shop}/assets/fonts/flaticon.css">
 <!-- Bootstrap-->
-<link rel="stylesheet" href="${shop}/assets/plugins/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="${shop}/assets/plugins/css/bootstrap.min.css">
 <!-- Fancybox-->
-<link rel="stylesheet" href="${shop}/assets/plugins/css/jquery.fancybox.min.css">
+<link rel="stylesheet"
+	href="${shop}/assets/plugins/css/jquery.fancybox.min.css">
 <!-- Animation -->
 <link rel="stylesheet" href="${shop}/assets/plugins/css/animate.css">
 <!-- owl -->
 <link rel="stylesheet" href="${shop}/assets/plugins/css/owl.css">
 <!--flexslider-->
-<link rel="stylesheet" href="${shop}/assets/plugins/css/flexslider.min.css">
+<link rel="stylesheet"
+	href="${shop}/assets/plugins/css/flexslider.min.css">
 <!-- selectize -->
 <link rel="stylesheet" href="${shop}/assets/plugins/css/selectize.css">
 <link rel="stylesheet"
 	href="${shop}/assets/plugins/css/selectize.bootstrap3.css">
-<link rel="stylesheet" href="${shop}/assets/plugins/css/jquery-ui.min.css">
+<link rel="stylesheet"
+	href="${shop}/assets/plugins/css/jquery-ui.min.css">
 <!--dropdown -->
 <link rel="stylesheet"
 	href="${shop}/assets/plugins/css/bootstrap-dropdownhover.min.css">
@@ -83,8 +87,8 @@
 						</a>
 							<ul class="dropdown-menu xt-lang-dropdown">
 								<li><a href="">France</a></li>
-								<li><a href="causes-list.html">Bangla</a></li>
-								<li><a href="causes-details.html">Swidesh</a></li>
+								<li><a href="">Bangla</a></li>
+								<li><a href="">Swidesh</a></li>
 							</ul></li>
 						<li class="dropdown"><a href="" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -92,8 +96,8 @@
 						</a>
 							<ul class="dropdown-menu xt-lang-dropdown">
 								<li><a href="">USD</a></li>
-								<li><a href="causes-list.html">EURO</a></li>
-								<li><a href="causes-details.html">Riyal</a></li>
+								<li><a href="">EURO</a></li>
+								<li><a href="">RMB</a></li>
 							</ul></li>
 					</ul>
 				</div>
@@ -108,7 +112,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="main-navigation">
 		<nav class="navbar navbar-fixed-top nav-scroll">
 		<div class="container">
@@ -126,33 +130,9 @@
 					<ul class="nav navbar-nav navbar-right ep-mobile-menu"
 						id="navbar-nav">
 						<li><a href="index.jsp">Home</a></li>
-						<li class="active"><a href="shop-page.html">Shop</a></li>
-						<li><a href="single-shop.html">Single Product</a></li>
+						<li class="active"><a href="${shop}/contentpage.jsp">Shop</a></li>
 						<li><a href="">About</a></li>
-						<li class="dropdown xt-drop-nav"><a href=""
-							class="dropdown-toggle" data-toggle="dropdown"
-							data-hover="dropdown"> Gallery <span class="caret"></span>
-						</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Electronics</a></li>
-								<li><a href="#">Furniture</a></li>
-								<li class="dropdown"><a href="#">Mobile and Tablets</a>
-									<ul class="dropdown-menu">
-										<li><a href="#">Nokia</a></li>
-										<li><a href="#">iPhone</a></li>
-										<li class="dropdown"><a href="#">Memory Card</a>
-											<ul class="dropdown-menu">
-												<li><a href="#">Max</a></li>
-												<li><a href="#">Min</a></li>
-											</ul></li>
-										<li><a href="#">Computer</a></li>
-										<li><a href="#">Office furniture</a></li>
-									</ul></li>
-								<li><a href="#">Land and space</a></li>
-								<li><a href="#">Bike and Cars</a></li>
-							</ul></li>
-						<li><a href="">Blog</a></li>
-						<li><a href="contact-us.html">Contact</a></li>
+						<li><a href="contact-us.jsp">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -342,41 +322,6 @@
 	</div>
 
 	</header>
-	<!--
-        |========================
-        |  MOBILE MENU
-        |========================
-        -->
-	<div class="menu-spacing">
-		<div class="container">
-			<div class="row">
-				<div class="mobile-menu-area visible-xs visible-sm">
-					<div class="mobile-menu">
-						<nav id="mobile-menu-active">
-						<ul class="main">
-							<li><a class="main-a" href="">Shirt</a></li>
-							<li><a class="main-a" href="">Pant</a></li>
-							<li class="active"><a class="main-a" href="#">Bourkha</a>
-								<ul>
-									<li><a href="#">Hijab</a></li>
-									<li><a href="#">Scarf</a></li>
-									<li><a href="#" class="main-a">Shirt</a>
-										<ul>
-											<li><a href="#">T-Shirt</a></li>
-											<li><a href="#">Trousers</a></li>
-											<li><a href="#">Jackets & sweater</a></li>
-											<li><a href="#">3 Piece</a></li>
-										</ul></li>
-								</ul></li>
-							<li><a class="main-a" href="">Shawl</a></li>
-							<li><a class="main-a" href="">Other</a></li>
-						</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!--
         |========================
@@ -398,7 +343,7 @@
 				</div>
 				<div class="clearfix"></div>
 				<div class="xt-product-color">
-					<h3>Color</h3>
+					<h3>Brands</h3>
 					<ul>
 						<li><a href="">Blue <span>(11)</span></a></li>
 						<li><a href="">Red <span>(7)</span></a></li>
@@ -408,85 +353,13 @@
 					</ul>
 				</div>
 				<div class="clearfix"></div>
-				<div class="xt-product-size">
-					<h3>Size</h3>
-					<ul>
-						<li><a href="">S <span>(11)</span></a></li>
-						<li><a href="">M <span>(7)</span></a></li>
-						<li><a href="">L <span>(4)</span></a></li>
-						<li><a href="">XL <span>(0)</span></a></li>
-						<li><a href="">XXL <span>(1)</span></a></li>
-					</ul>
-				</div>
-				<div class="clearfix"></div>
-				<div class="xt-top-product">
-					<h3>Top Rated Products</h3>
-					<div class="each-top-product">
-						<div class="top-item">
-							<img src="assets/images/1.jpg" alt="" class="img-responsive">
-							<div class="top-item-info">
-								<a href=""><h4>T-SHIRT</h4></a> <span>$260</span>
-								<del>$280</del>
-							</div>
-						</div>
-						<div class="top-item">
-							<img src="assets/images/3.jpg" alt="" class="img-responsive">
-							<div class="top-item-info">
-								<a href=""><h4>NEW LOOK</h4></a> <span>$260</span>
-								<del>$280</del>
-							</div>
-						</div>
-						<div class="top-item">
-							<img src="assets/images/b2.jpg" alt="" class="img-responsive">
-							<div class="top-item-info">
-								<a href=""><h4>Shirt</h4></a> <span>$260</span>
-								<del>$280</del>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="xt-side-deal">
-					<div class="xt-off-deal cover-bg white xt-deal xt-color-bg">
-						<span>summer collection 2017</span>
-						<h2 class="xt-deal-price">
-							66<span>%<br>off
-							</span>
-						</h2>
-						<a href="" class="btn btn-border">Shop now</a>
-					</div>
-				</div>
 				</aside>
 				<div class="col-md-9">
 					<!--end singlw item info -->
 					<div class="xt-feature-product">
 						<div class="section-separator">
 							<div class="xt-filter-nav">
-								<div class="form-group col-md-4 col-sm-4 col-xs-12">
-									<div class="xt-select xt-search-opt">
-										<select class="xt-category-search select-beast">
-											<option>Shirt</option>
-											<option>Pant</option>
-											<option>Jeans</option>
-											<option>Jackets</option>
-										</select>
-									</div>
-									<div class="xt-search-opt xt-search-btn">
-										<button type="button" class="btn-search">
-											<i class="fa fa-long-arrow-down"></i>
-										</button>
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-3 col-xs-8 xt-show-item">
-									<label>Show: </label>
-									<div class="xt-select xt-search-opt xt-item-view-count">
-										<select class="xt-category-search select-beast">
-											<option>4</option>
-											<option>8</option>
-											<option>12</option>
-											<option>20</option>
-											<option>40</option>
-										</select>
-									</div>
+								<div class="col-md-7 col-sm-7 col-xs-10 xt-show-item">
 								</div>
 								<div class="col-md-5 col-sm-5 col-xs-12">
 									<div class="xt-page-pagination">
@@ -545,766 +418,15 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/1.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">T-Shirt</span> <span
-													class="name xt-semibold">2017 Model</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">T-Shirt</span> <span
-														class="name xt-semibold">2017 Model</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/3.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">New Look</span> <span
-													class="name xt-semibold">2018 Model Coming Soon</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">New Look</span> <span
-														class="name xt-semibold">2018 Model Coming Soon</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/4.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">Lipstick</span> <span
-													class="name xt-semibold">Imported From U.S.</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">Lipstick</span> <span
-														class="name xt-semibold">Imported From U.S.</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/b2.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">Shirt</span> <span
-													class="name xt-semibold">Exclusive Design</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">Shirt</span> <span
-														class="name xt-semibold">Exclusive Design</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/b1.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">Tops</span> <span
-													class="name xt-semibold">Spring Collection</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">Tops</span> <span
-														class="name xt-semibold">Spring Collection</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/2.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">Sweater</span> <span
-													class="name xt-semibold">Red Color</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">Sweater</span> <span
-														class="name xt-semibold">Red Color</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/1.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">T-Shirt</span> <span
-													class="name xt-semibold">2017 Model</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">T-Shirt</span> <span
-														class="name xt-semibold">2017 Model</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/3.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">New Look</span> <span
-													class="name xt-semibold">2018 Model Coming Soon</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">New Look</span> <span
-														class="name xt-semibold">2018 Model Coming Soon</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/4.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">Lipstick</span> <span
-													class="name xt-semibold">Imported From U.S.</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">Lipstick</span> <span
-														class="name xt-semibold">Imported From U.S.</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/b2.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">Shirt</span> <span
-													class="name xt-semibold">Exclusive Design</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">Shirt</span> <span
-														class="name xt-semibold">Exclusive Design</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/b1.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">Tops</span> <span
-													class="name xt-semibold">Spring Collection</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">Tops</span> <span
-														class="name xt-semibold">Spring Collection</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/2.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">Sweater</span> <span
-													class="name xt-semibold">Red Color</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">Sweater</span> <span
-														class="name xt-semibold">Red Color</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/1.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">T-Shirt</span> <span
-													class="name xt-semibold">2017 Model</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">T-Shirt</span> <span
-														class="name xt-semibold">2017 Model</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/3.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">New Look</span> <span
-													class="name xt-semibold">2018 Model Coming Soon</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">New Look</span> <span
-														class="name xt-semibold">2018 Model Coming Soon</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/4.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">Lipstick</span> <span
-													class="name xt-semibold">Imported From U.S.</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">Lipstick</span> <span
-														class="name xt-semibold">Imported From U.S.</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/b2.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">Shirt</span> <span
-													class="name xt-semibold">Exclusive Design</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">Shirt</span> <span
-														class="name xt-semibold">Exclusive Design</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/b1.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">Tops</span> <span
-													class="name xt-semibold">Spring Collection</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">Tops</span> <span
-														class="name xt-semibold">Spring Collection</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/2.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">Sweater</span> <span
-													class="name xt-semibold">Red Color</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">Sweater</span> <span
-														class="name xt-semibold">Red Color</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/1.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">T-Shirt</span> <span
-													class="name xt-semibold">2017 Model</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">T-Shirt</span> <span
-														class="name xt-semibold">2017 Model</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 col-sm-4">
-									<div class="xt-feature">
-										<div class="product-img">
-											<img src="assets/images/3.jpg" alt="" class="img-responsive">
-											<span class="product-tag xt-uppercase">sale!</span>
-										</div>
-										<div class="product-info">
-											<div class="product-title">
-												<span class="category xt-uppercase">New Look</span> <span
-													class="name xt-semibold">2018 Model Coming Soon</span>
-											</div>
-											<div class="price-tag pull-right">
-												<span class="old-price"><del>$280</del></span> <span
-													class="new-price xt-semibold">$260</span>
-											</div>
-											<div class="xt-featured-caption">
-												<div class="product-title">
-													<span class="category xt-uppercase">New Look</span> <span
-														class="name xt-semibold">2018 Model Coming Soon</span>
-												</div>
-												<div class="price-tag pull-right">
-													<span class="old-price"><del>$280</del></span> <span
-														class="new-price xt-semibold">$260</span>
-												</div>
-												<div class="add-cart">
-													<a href="" class="btn btn-fill">Add to cart</a>
-													<ul class="reaction">
-														<li><a href=""><i class="fa fa-search"></i></a></li>
-														<li><a href=""><i class="fa fa-heart-o"></i></a></li>
-														<li><a href=""><i class="fa fa-bar-chart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 							<div class="clearfix"></div>
 							<div class="col-md-12 xt-bottom-hr">
 								<hr class="xt-hr">
 							</div>
 							<div class="xt-filter-nav padding-bottom-60">
-								<div class="col-md-2 col-sm-2 col-xs-6">
-									<div class="xt-view">
-										<a href="" class="active"><i class="fa fa-th-large"></i></a> <a
-											href=""><i class="fa fa-navicon"></i></a>
-									</div>
+								<div class="col-md-5 col-sm-5 col-xs-10 xt-show-item">
 								</div>
-								<div class="col-md-3 col-sm-3 col-xs-6 xt-show-item">
-									<label>Show: </label>
-									<div class="xt-select xt-search-opt xt-item-view-count">
-										<select class="xt-category-search select-beast">
-											<option>4</option>
-											<option>8</option>
-											<option>12</option>
-											<option>20</option>
-											<option>40</option>
-										</select>
-									</div>
-								</div>
-								<div
-									class="form-group xt-shop-category col-md-4 col-sm-4 col-xs-12">
-									<div class="xt-select xt-search-opt">
-										<select class="xt-category-search select-beast">
-											<option>Shirt</option>
-											<option>Pant</option>
-											<option>Jeans</option>
-											<option>Jackets</option>
-										</select>
-									</div>
-									<div class="xt-search-opt xt-search-btn">
-										<button type="button" class="btn-search">
-											<i class="fa fa-long-arrow-down"></i>
-										</button>
-									</div>
-								</div>
+								<div class="col-md-4 col-sm-4 col-xs-12"></div>
 								<div class="col-md-3 col-sm-3 col-xs-12">
 									<div class="xt-page-pagination">
 										<nav aria-label="Page navigation">
@@ -1351,7 +473,7 @@
 				</div>
 				<div class="col-md-6 col-sm-12">
 					<div class="xt-social">
-						<span>stay conected</span>
+						<span>stay connected</span>
 						<ul>
 							<li><a href=""><i class="fa fa-facebook"></i></a></li>
 							<li><a href=""><i class="fa fa-twitter"></i></a></li>
@@ -1378,10 +500,9 @@
 						<ul>
 							<li><i class="fa fa-mobile-phone"></i><a href="">+(1234)
 									456 7896</a></li>
-							<li><i class="fa fa-envelope-o"></i><a href="">info@xootheme.com</a></li>
+							<li><i class="fa fa-envelope-o"></i><a href="">info@shopx.com</a></li>
 							<li><i class="fa fa-location-arrow"></i>
-								<address>Address: 42/1, dariapara road, New york city,
-									New york. USA</address></li>
+								<address>Address: ZhuHai</address></li>
 						</ul>
 					</div>
 				</div>
@@ -1404,7 +525,7 @@
 						<ul>
 							<li><a href=""><i class="fa fa-caret-right"></i>Shopping
 									& return</a></li>
-							<li><a href=""><i class="fa fa-caret-right"></i>Seacure
+							<li><a href=""><i class="fa fa-caret-right"></i>Secure
 									Shopping</a></li>
 							<li><a href=""><i class="fa fa-caret-right"></i>International
 									Shopping </a></li>
@@ -1484,12 +605,7 @@
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="row section-separator">
-				<div class="col-md-6 col-sm-6">
-					<p>
-						Free Bootstrap eCommerce Template by <a
-							href="https://xoothemes.com/" target="_blank">XooThemes</a>.
-					</p>
-				</div>
+				<div class="col-md-6 col-sm-6"></div>
 				<div class="col-md-6 col-sm-6">
 					<img src="assets/images/payment.png" alt="" class="img-responsive">
 				</div>
@@ -1497,28 +613,6 @@
 		</div>
 	</div>
 	</footer>
-	<table width="700" border="1">
-		<!-- 此處是大循環用來獲取商品的集合 -->
-		<c:forEach items="${applicationScope.bigList}" var="proList">
-			<tr>
-				<td colspan="4">${proList[0].category.name}</td>
-			</tr>
-			<tr>
-				<!-- 此處小循環,用來顯示每個商品的信息 -->
-				<c:forEach items="${proList}" var="product">
-					<td>
-						<div>
-							<img src="${shop}/img/HK.png" />
-						</div>
-						<div>${product.name}</div>
-						<div>${product.price}</div>
-					</td>
-				</c:forEach>
-				<!-- 小循環結束 -->
-			</tr>
-			<!-- 大循環結束 -->
-		</c:forEach>
-	</table>
 </body>
 </html>
 

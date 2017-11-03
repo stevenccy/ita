@@ -37,20 +37,24 @@
 <!-- Custom Icon Font -->
 <link rel="stylesheet" href="${shop}/assets/fonts/flaticon.css">
 <!-- Bootstrap-->
-<link rel="stylesheet" href="${shop}/assets/plugins/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="${shop}/assets/plugins/css/bootstrap.min.css">
 <!-- Fancybox-->
-<link rel="stylesheet" href="${shop}/assets/plugins/css/jquery.fancybox.min.css">
+<link rel="stylesheet"
+	href="${shop}/assets/plugins/css/jquery.fancybox.min.css">
 <!-- Animation -->
 <link rel="stylesheet" href="${shop}/assets/plugins/css/animate.css">
 <!-- owl -->
 <link rel="stylesheet" href="${shop}/assets/plugins/css/owl.css">
 <!--flexslider-->
-<link rel="stylesheet" href="${shop}/assets/plugins/css/flexslider.min.css">
+<link rel="stylesheet"
+	href="${shop}/assets/plugins/css/flexslider.min.css">
 <!-- selectize -->
 <link rel="stylesheet" href="${shop}/assets/plugins/css/selectize.css">
 <link rel="stylesheet"
 	href="${shop}/assets/plugins/css/selectize.bootstrap3.css">
-<link rel="stylesheet" href="${shop}/assets/plugins/css/jquery-ui.min.css">
+<link rel="stylesheet"
+	href="${shop}/assets/plugins/css/jquery-ui.min.css">
 <!--dropdown -->
 <link rel="stylesheet"
 	href="${shop}/assets/plugins/css/bootstrap-dropdownhover.min.css">
@@ -118,39 +122,15 @@
 								<span aria-hidden="true" class="icon"></span>
 							</button>
 							<a class="navbar-brand" href="index.jsp"><img
-								src="${shop}/assets/images/flogo.png" alt="" class="img-responsive"></a>
+								src="${shop}/assets/images/flogo.png" alt=""
+								class="img-responsive"></a>
 						</div>
 						<div class="collapse navbar-collapse" id="js-navbar-menu">
 							<ul class="nav navbar-nav navbar-right ep-mobile-menu"
 								id="navbar-nav">
 								<li><a href="index.jsp">Home</a></li>
-								<li><a href="">Shop</a></li>
-								<li class="active"><a href="single-shop.html">Single
-										Product</a></li>
+								<li class="active"><a href="shop-page.html">Shop</a></li>
 								<li><a href="">About</a></li>
-								<li class="dropdown xt-drop-nav"><a href=""
-									class="dropdown-toggle" data-toggle="dropdown"
-									data-hover="dropdown"> Gallery <span class="caret"></span>
-								</a>
-									<ul class="dropdown-menu">
-										<li><a href="#">Electronics</a></li>
-										<li><a href="#">Furniture</a></li>
-										<li class="dropdown"><a href="#">Mobile and Tablets</a>
-											<ul class="dropdown-menu">
-												<li><a href="#">Nokia</a></li>
-												<li><a href="#">iPhone</a></li>
-												<li class="dropdown"><a href="#">Memory Card</a>
-													<ul class="dropdown-menu">
-														<li><a href="#">Max</a></li>
-														<li><a href="#">Min</a></li>
-													</ul></li>
-												<li><a href="#">Computer</a></li>
-												<li><a href="#">Office furniture</a></li>
-											</ul></li>
-										<li><a href="#">Land and space</a></li>
-										<li><a href="#">Bike and Cars</a></li>
-									</ul></li>
-								<li><a href="">Blog</a></li>
 								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>
@@ -316,24 +296,25 @@
 										class="fa flaticon-shopping-cart"></i>
 								</a>
 									<ul class="dropdown-menu xt-cart-items">
-									<c:forEach items="${sessionScope.order.itemList}"
-										var="orderItem">
-										<li>
-										<a
-											href="${shop}/ProductController/detail.mvc?id=${orderItem.product.id}">
-												<img src="${shop}/assets/images/${orderItem.product.imgurl}" alt=""
-													style=" max-width:80px; max-height:80px; width: auto; height: auto;">
-												<h3>${orderItem.name}</h3> <span class="cart-price">${orderItem.number}
-													X $${orderItem.price}</span>
+										<c:forEach items="${sessionScope.order.itemList}"
+											var="orderItem">
+											<li><a
+												href="${shop}/ProductController/detail.mvc?id=${orderItem.product.id}">
+													<img
+													src="${shop}/assets/images/${orderItem.product.imgurl}"
+													alt=""
+													style="max-width: 80px; max-height: 80px; width: auto; height: auto;">
+													<h3>${orderItem.name}</h3> <span class="cart-price">${orderItem.number}
+														X $${orderItem.price}</span>
+											</a></li>
+										</c:forEach>
+										<li><a href="" class="subtotal top-checkout">
+												<h3>Subtotal :</h3> <span class="total-price">$${sessionScope.order.total}</span>
 										</a></li>
-									</c:forEach>
-									<li><a href="" class="subtotal top-checkout">
-											<h3>Subtotal :</h3> <span class="total-price">$${sessionScope.order.total}</span>
-									</a></li>
-									<li><a href="checkout.jsp" class="process top-checkout">
-											<h3>Process to Checkout</h3>
-									</a></li>
-								</ul></li>
+										<li><a href="checkout.jsp" class="process top-checkout">
+												<h3>Process to Checkout</h3>
+										</a></li>
+									</ul></li>
 							</ul>
 							<span class="xt-item-count">${fn:length(sessionScope.order.itemList)}</span>
 						</div>
@@ -395,8 +376,10 @@
 									<div role="tabpanel" id="xt-pro-3"
 										class="tab-pane fade active in">
 										<a class="grouped_elements" data-fancybox="gallery"
-											href="${shop}/assets/images/${requestScope.product.imgurl}"> <img
-											src="${shop}/assets/images/${requestScope.product.imgurl}" alt="" class="img-responsive" >
+											href="${shop}/assets/images/${requestScope.product.imgurl}">
+											<img
+											src="${shop}/assets/images/${requestScope.product.imgurl}"
+											alt="" class="img-responsive">
 										</a>
 									</div>
 								</div>
@@ -404,7 +387,9 @@
 								<ul id="tablist" class="xt-pro-thumbs-list" role="tablist">
 									<li role="presentation" class="active"><a href="#xt-pro-3"
 										role="tab" data-toggle="tab" aria-expanded="true"> <img
-											src="${shop}/assets/images/${requestScope.product.imgurl}" alt="product thumbs" style=" max-width:80px; max-height:80px; width: auto; height: auto;">
+											src="${shop}/assets/images/${requestScope.product.imgurl}"
+											alt="product thumbs"
+											style="max-width: 80px; max-height: 80px; width: auto; height: auto;">
 									</a></li>
 								</ul>
 							</div>
@@ -438,7 +423,9 @@
 										title="Qty" class="input-text qty text" size="4">
 								</div>
 								<div class="product-add-cart">
-									<a href="${shop}/OrderItemController/addOrderItem.mvc?id=${product.id}" class="btn btn-fill">Add to cart</a> <a href="#"
+									<a
+										href="${shop}/OrderItemController/addOrderItem.mvc?id=${product.id}"
+										class="btn btn-fill">Add to cart</a> <a href="#"
 										class="btn liked "><i class="fa fa-heart-o xt-no-color"></i><i
 										class="fa fa-heart xt-color"></i></a>
 								</div>
@@ -516,7 +503,8 @@
 				<div class="row">
 					<div class="col-md-3 col-sm-3">
 						<div class="footer-widget footer-contact">
-							<img src="${shop}/assets/images/flogo.png" alt="" class="img-responsive">
+							<img src="${shop}/assets/images/flogo.png" alt=""
+								class="img-responsive">
 							<ul>
 								<li><i class="fa fa-mobile-phone"></i><a href="">+(1234)
 										456 7896</a></li>
@@ -635,7 +623,8 @@
 						</p>
 					</div>
 					<div class="col-md-6 col-sm-6">
-						<img src="${shop}/assets/images/payment.png" alt="" class="img-responsive">
+						<img src="${shop}/assets/images/payment.png" alt=""
+							class="img-responsive">
 					</div>
 				</div>
 			</div>

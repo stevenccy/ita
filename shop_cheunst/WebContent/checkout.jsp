@@ -183,31 +183,7 @@
 								id="navbar-nav">
 								<li><a href="index.jsp">Home</a></li>
 								<li><a href="shop-page.html">Shop</a></li>
-								<li><a href="single-shop.html">Single Product</a></li>
 								<li><a href="">About</a></li>
-								<li class="dropdown xt-drop-nav"><a href=""
-									class="dropdown-toggle" data-toggle="dropdown"
-									data-hover="dropdown"> Gallery <span class="caret"></span>
-								</a>
-									<ul class="dropdown-menu">
-										<li><a href="#">Electronics</a></li>
-										<li><a href="#">Furniture</a></li>
-										<li class="dropdown"><a href="#">Mobile and Tablets</a>
-											<ul class="dropdown-menu">
-												<li><a href="#">Nokia</a></li>
-												<li><a href="#">iPhone</a></li>
-												<li class="dropdown"><a href="#">Memory Card</a>
-													<ul class="dropdown-menu">
-														<li><a href="#">Max</a></li>
-														<li><a href="#">Min</a></li>
-													</ul></li>
-												<li><a href="#">Computer</a></li>
-												<li><a href="#">Office furniture</a></li>
-											</ul></li>
-										<li><a href="#">Land and space</a></li>
-										<li><a href="#">Bike and Cars</a></li>
-									</ul></li>
-								<li><a href="">Blog</a></li>
 								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>
