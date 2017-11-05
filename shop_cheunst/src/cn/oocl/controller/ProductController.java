@@ -42,6 +42,22 @@ public class ProductController extends BaseController {
 		return "forward:/admin/admin_query.jsp";
 	}
 
+	@RequestMapping("/queryForList")
+	public String queryForList(String keyword) {
+		Page<Product> page = productService.queryByName(keyword, 0, 20);
+		session.setAttribute("keyword", keyword);
+		session.setAttribute("queryList", page);
+		return "forward:/contentpage.jsp";
+	}
+	
+
+	@RequestMapping("/queryCategoryForList")
+	public String queryCategoryForList(String cid) {
+		Page<Product> page = productService.queryCategoryForList(cid, 0, 20);
+		session.setAttribute("queryList", page);
+		return "forward:/contentpage.jsp";
+	}
+	
 	@RequestMapping("/update")
 	public String update(Product product) {
 		productService.update(product);

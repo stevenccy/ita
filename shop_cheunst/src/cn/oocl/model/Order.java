@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 // 購物車,當提交數據之後就是訂單,它與訂單項的關係是一對多
 @Entity
-@Table (name="order")
+@Table (name="orders")
 public class Order implements Serializable {
 
 	private static final long serialVersionUID = -2792665360763002611L;

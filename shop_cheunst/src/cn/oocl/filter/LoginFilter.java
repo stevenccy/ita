@@ -18,8 +18,8 @@ import cn.oocl.model.Account;
 /**
  * Servlet Filter implementation class LoginFilter
  */
-//@WebFilter(filterName = "filter-0-LoginFilter", urlPatterns = "/admin/*", dispatcherTypes = { DispatcherType.FORWARD,
-//		DispatcherType.INCLUDE, DispatcherType.REQUEST, DispatcherType.ERROR, DispatcherType.ASYNC })
+@WebFilter(filterName = "filter-0-LoginFilter", urlPatterns = "/admin/*", dispatcherTypes = { DispatcherType.FORWARD,
+		DispatcherType.INCLUDE, DispatcherType.REQUEST, DispatcherType.ERROR, DispatcherType.ASYNC })
 public class LoginFilter implements Filter {
 
 	/**

@@ -1,9 +1,9 @@
-
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <!-- TITLE OF SITE -->
 <title>eCommerce</title>
@@ -72,6 +72,7 @@
 				// 2: 购物车在后台删除对应的购物项 (后台实现)
 				// 3: 重新计算总价格 (后台实现)
 				// 4: 返回并更新,新的总价格
+				alert(total);
 				$("#total").html(total);
 				$("#subTotal").html(total);
 			}, 'text');
@@ -150,7 +151,6 @@
 				</div>
 				<div class="user-nav pull-right col-md-6 col-sm-6 col-xs-12">
 					<ul>
-						<li><a href="#">Checkout</a></li>
 						<li><a href="">login</a></li>
 					</ul>
 				</div>
@@ -171,8 +171,9 @@
 						<div class="collapse navbar-collapse" id="js-navbar-menu">
 							<ul class="nav navbar-nav navbar-right ep-mobile-menu"
 								id="navbar-nav">
-								<li><a href="index.jsp">Home</a></li>
-								<li><a href="contentpage.jsp">Shop</a></li>
+								<li><a href="${shop}/index.jsp">Home</a></li>
+								<li><a
+									href="${shop}/ProductController/queryForList.mvc?keyword=">Shop</a></li>
 								<li><a href="">About</a></li>
 								<li><a href="">Contact</a></li>
 							</ul>
@@ -182,181 +183,83 @@
 			</nav>
 		</div>
 		<!--Mobile Menu-->
-		<div class="main-color-bg">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3 left-menu-wrapper">
-						<div class="xt-sidenav hidden-xs hidden-sm">
-							<nav></nav>
-						</div>
-					</div>
-					<div class="col-md-8 col-sm-10 col-xs-12 xt-header-search">
-						<form action="${shop}/ProductController/queryForList.mvc">
-							<div
-								class="form-group xt-form search-bar  col-md-8 col-sm-8 col-xs-7 padding-right-o">
-								<input type="text" class="form-control" name="keyword"
-									placeholder="Search for things you want to buy">
-							</div>
-							<div
-								class="form-group xt-form xt-search-cat col-md-4 col-sm-4 col-xs-5 padding-left-o ">
-								<div class="xt-search-opt xt-search-btn">
-									<button type="submit" class="btn btn-primary btn-search"
-										style="height: 47px">
-										<i class="fa fa-search"></i>
-									</button>
-								</div>
-							</div>
-						</form>
-					</div>
-					<div class="col-md-1 col-sm-2 col-xs-2">
-						<div class="xt-cart">
-							<ul>
-								<li class="dropdown"><a href="" class="dropdown-toggle"
-									data-toggle="dropdown" data-hover="dropdown"> <i
-										class="fa flaticon-shopping-cart"></i>
-								</a>
-									<ul class="dropdown-menu xt-cart-items">
-										<c:forEach items="${sessionScope.order.itemList}"
-											var="orderItem">
-											<li lang="${orderItem.product.id}"><a
-												href="${shop}/ProductController/detail.mvc?id=${orderItem.product.id}">
-													<img
-													src="${shop}/assets/images/${orderItem.product.imgurl}"
-													alt=""
-													style="max-width: 80px; max-height: 80px; width: auto; height: auto;">
-													<span>${orderItem.name}</span> <span class="cart-price">${orderItem.number}
-														X $${orderItem.price}</span>
-											</a></li>
-										</c:forEach>
-										<li><a href="#" class="subtotal top-checkout"> <span>Subtotal
-													:</span> <span class="total-price" id="dropDownSubTotal">$${sessionScope.order.total}</span>
-										</a></li>
-										<li><a href="#" class="process top-checkout"> <span>Process
-													to Checkout</span>
-										</a></li>
-									</ul></li>
-							</ul>
-							<span class="xt-item-count">${fn:length(sessionScope.order.itemList)}</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</header>
 	<!--
         |========================
         |   PRODUCT DESCRIPTION
         |========================
         -->
-	<section class="xt-xt-single-product">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 visible-xs visible-sm padding-right-o"></div>
-				<div class="col-md-9 padding-o">
-					<div class="xt-product-inner">
-						<div class="container">
-							<div class="row">
-								<div class="col-sm-12 col-md-10 col-md-offset-1">
-									<table class="table table-hover">
-										<thead>
-											<tr>
-												<th>Product</th>
-												<th>Quantity</th>
-												<th class="text-center">Price</th>
-												<th class="text-center">Total</th>
-												<th>&nbsp;</th>
-											</tr>
-										</thead>
-										<tbody>
-											<c:forEach items="${sessionScope.order.itemList}"
-												var="orderItem">
-												<tr lang="${orderItem.product.id}">
-													<td class="col-sm-8 col-md-6">
-														<div class="media">
-															<div
-																style="max-width: 120px; min-width: 120px min-height:120px max-height:120px">
-																<a class="thumbnail pull-left" href="#"> <img
-																	class="media-object"
-																	src="${shop}/assets/images/${orderItem.product.imgurl}"
-																	style="max-width: 120px; max-height: 120px;">
-																</a>
-															</div>
-
-															<div class="media-body">
-																<h4 class="media-heading">
-																	<a href="#">${orderItem.name}</a>
-																</h4>
-																<span>Status: </span><span class="text-success"><strong>In
-																		Stock</strong></span>
-															</div>
-														</div>
-													</td>
-													<td class="col-sm-1 col-md-1" style="text-align: center">
-														<input type="text" class="inputNumber"
-														value="${orderItem.number}">
-													</td>
-													<td class="col-sm-1 col-md-1 text-center">$<strong
-														class="price">${orderItem.price}</strong></td>
-													<td class="col-sm-1 col-md-1 text-center">$<strong
-														class="price">${orderItem.price*orderItem.number}</strong></td>
-													<td class="col-sm-1 col-md-1">
-														<button type="button" class="btn btn-danger">
-															Remove</button>
-													</td>
-												</tr>
-											</c:forEach>
-											<tr>
-												<td>&nbsp;</td>
-												<td>&nbsp;</td>
-												<td>&nbsp;</td>
-												<td>
-													<h5>Subtotal</h5>
-												</td>
-												<td class="text-right">
-													<h5>
-														<strong id="subTotal">$${sessionScope.order.total}</strong>
-													</h5>
-												</td>
-											</tr>
-											<tr>
-												<td>&nbsp;</td>
-												<td>&nbsp;</td>
-												<td>&nbsp;</td>
-												<td>
-													<h3>Total</h3>
-												</td>
-												<td class="text-right">
-													<h3>
-														<strong id="total">$${sessionScope.order.total}</strong>
-													</h3>
-												</td>
-											</tr>
-											<tr>
-												<td>&nbsp;</td>
-												<td>&nbsp;</td>
-												<td>&nbsp;</td>
-												<td>
-													<button type="button" class="btn btn-default">
-														<a href="${shop}/index.jsp"> Continue Shopping </a>
-													</button>
-												</td>
-												<td>
-													<button type="button" class="btn btn-success">
-														<a href="${shop}/confirm2.jsp"> Checkout</a>
-													</button>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
+	<div class="section_container">
+		<!-- 确认订单信息 -->
+		<div class="check-stup">
+			<!-- 商品确认 -->
+			<div class="pro-check check ">
+				<h1>Confirm the order detail</h1>
+				<table class="data-table cart-table" cellpadding="0" cellspacing="0">
+					<tr>
+						<th class="align_center" width="10%">Product ID</th>
+						<th class="align_left" width="25%">Product Image</th>
+						<th class="align_left" width="10%">Name</th>
+						<th class="align_center" width="10%">Price</th>
+						<th class="align_center" width="20%">Quantity</th>
+						<th class="align_center" width="15%">Sum</th>
+					</tr>
+					<c:forEach items="${sessionScope.order.itemList}" var="orderItem">
+						<tr>
+							<td class="align_center"><a href="#" class="edit">${orderItem.product.id}</a>
+							</td>
+							<td width="80px">
+							<div style="minwidth=50px; maxwidth=50px; minheight=70px;maxheight=70px	"><img src="${shop}/assets/images/${orderItem.product.imgurl }" /></div></td>
+							<td class="align_left"><a class="pr_name" href="#">${orderItem.name}</a>
+							</td>
+							<td class="align_center vline">￥${orderItem.price}</td>
+							<td class="align_center vline">${orderItem.number}</td>
+							<td class="align_center vline">￥${orderItem.price*orderItem.number}</td>
+						</tr>
+					</c:forEach>
+				</table>
+				<div class="sum">
+					<div class="fr">
+						<span>SUM：</span><b>￥${sessionScope.order.total}</b>
 					</div>
 				</div>
 			</div>
+			<!-- 订购人确认 (订单与订单项级联入库)-->
+			<form action="${shop}/OrderController/save.mvc" method="post">
+				<div class="person-check check">
+					<h1>Order Person</h1>
+					<div class="person-checkinner">
+						<div>
+							<label style="width: 120px">Shipper Name:</label> <input
+								type="text" name="name" />
+						</div>
+						<div>
+							<label style="width: 120px">Mobile Phone:</label> <input
+								type="text" name="phone" />
+						</div>
+						<div>
+							<label style="width: 120px">Postal Code:</label> <input
+								type="text" name="post" />
+						</div>
+						<div>
+							<label style="width: 120px">Address:</label> <input type="text"
+								name="address" />
+						</div>
+					</div>
+				</div>
+				<!-- 卖家留言 -->
+				<div class="person-check check">
+					<h1>Remarks</h1>
+					<textarea style="margin: 5px;" name="remark" cols="120" rows="2">You are welcome to leave us a message.</textarea>
+					<div class="submit">
+						<input type="submit" class="sub-logo fr"
+							style="margin: 0px; padding: 0px; border: 0px;"
+							value="Confirm Purchase" />
+					</div>
+				</div>
+			</form>
 		</div>
-	</section>
-	<div class="clearfix"></div>
+	</div>
 	<!--
         |========================
         |      FOOTER

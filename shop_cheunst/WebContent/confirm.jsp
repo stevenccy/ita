@@ -155,7 +155,7 @@
 
 				</div>
 				<!-- 订购人确认 (订单与订单项级联入库)-->
-				<form action="" method="post">
+				<form action="${shop}/OrderController/save.mvc" method="post">
 					<div class="person-check check">
 						<h1>订购人信息</h1>
 						<div class="person-checkinner">

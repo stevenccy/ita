@@ -32,6 +32,12 @@ public  class ProductServiceImpl implements ProductService {
 		PageRequest pageRequest = new PageRequest(currentPage, size);
 		return productDao.queryByName("%" + keyword + "%", pageRequest);
 	}
+	
+	@Override
+	public Page<Product> queryCategoryForList(String cid, int currentPage, int size) {
+		PageRequest pageRequest = new PageRequest(currentPage, size);
+		return productDao.queryCategoryForList("%" + cid + "%", pageRequest);
+	}
 
 	@Override
 	public Product update(Product product) {

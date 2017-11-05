@@ -88,8 +88,8 @@
 							</a>
 								<ul class="dropdown-menu xt-lang-dropdown">
 									<li><a href="">France</a></li>
-									<li><a href="causes-list.html">Bangla</a></li>
-									<li><a href="causes-details.html">Swidesh</a></li>
+									<li><a href="">Bangla</a></li>
+									<li><a href="">Swidesh</a></li>
 								</ul></li>
 							<li class="dropdown"><a href="" class="dropdown-toggle"
 								data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -97,16 +97,15 @@
 							</a>
 								<ul class="dropdown-menu xt-lang-dropdown">
 									<li><a href="">USD</a></li>
-									<li><a href="causes-list.html">EURO</a></li>
-									<li><a href="causes-details.html">Riyal</a></li>
+									<li><a href="">EURO</a></li>
+									<li><a href="">Riyal</a></li>
 								</ul></li>
 						</ul>
 					</div>
 				</div>
 				<div class="user-nav pull-right col-md-6 col-sm-6 col-xs-12">
 					<ul>
-						<li><a href="">My wishlist</a></li>
-						<li><a href="">Checkout</a></li>
+						<li><a href="${shop}/checkout.jsp">Checkout</a></li>
 						<li><a href="">login</a></li>
 					</ul>
 				</div>
@@ -121,17 +120,18 @@
 								data-toggle="collapse" data-target=".navbar-collapse">
 								<span aria-hidden="true" class="icon"></span>
 							</button>
-							<a class="navbar-brand" href="index.jsp"><img
+							<a class="navbar-brand" href="${shop}/index.jsp"><img
 								src="${shop}/assets/images/flogo.png" alt=""
 								class="img-responsive"></a>
 						</div>
 						<div class="collapse navbar-collapse" id="js-navbar-menu">
 							<ul class="nav navbar-nav navbar-right ep-mobile-menu"
 								id="navbar-nav">
-								<li><a href="index.jsp">Home</a></li>
-								<li class="active"><a href="shop-page.html">Shop</a></li>
+								<li><a href="${shop}/index.jsp">Home</a></li>
+								<li><a
+									href="${shop}/ProductController/queryForList.mvc?keyword=">Shop</a></li>
 								<li><a href="">About</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
+								<li><a href="">Contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -148,109 +148,39 @@
 								<ul class="xt-side-menu">
 									<li><a href="#">All Category</a>
 										<ul class="xt-dropdown">
-											<li><a class="xt-nav-link" href="single-shop.html"><i
-													class="fa flaticon-glasses"></i> FASHION</a>
-												<ul class="mega-menu">
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Bags</a></li>
-															<li><a href="single-shop.html">Funky</a></li>
-															<li><a href="single-shop.html">Ear Wear</a></li>
-															<li><a href="single-shop.html">Shoes</a></li>
-															<li><a href="single-shop.html">Cosmetic</a></li>
-														</ul>
-													</li>
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Shirt</a></li>
-															<li><a href="single-shop.html">Pant</a></li>
-															<li><a href="single-shop.html">Trousers</a></li>
-															<li><a href="single-shop.html">Jackets & sweater</a></li>
-															<li><a href="single-shop.html">T-Shirts</a></li>
-														</ul>
-													</li>
-												</ul></li>
-											<li><a class="xt-nav-link" href="single-shop.html"><i
-													class="fa flaticon-dress"></i> WOMEN'S</a>
-												<ul class="mega-menu">
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Accessories</a></li>
-															<li><a href="single-shop.html">Ornaments</a></li>
-															<li><a href="single-shop.html">Shoes</a></li>
-															<li><a href="single-shop.html">3 Piece</a></li>
-															<li><a href="single-shop.html">Cosmetic</a></li>
-														</ul>
-													</li>
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Ring</a></li>
-															<li><a href="single-shop.html">Bags</a></li>
-															<li><a href="single-shop.html">Ear Wear</a></li>
-															<li><a href="single-shop.html">Storage</a></li>
-															<li><a href="single-shop.html">Office</a></li>
-														</ul>
-													</li>
-												</ul></li>
-											<li><a href="single-shop.html"><i
-													class="fa flaticon-high-heel"></i> SHOES</a></li>
-											<li><a class="xt-nav-link" href="single-shop.html"><i
-													class="fa flaticon-v-neck-shirt"></i> MAN'S</a>
+											<li><a class="xt-nav-link" href="contentpage.jsp"><i
+													class="fa flaticon-glasses"></i> EYE WEAR</a>
 												<ul class="mega-menu xt-column">
 													<li>
 														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Jeans Pant</a></li>
-															<li><a href="single-shop.html">T-Shirts</a></li>
-															<li><a href="single-shop.html">Pant</a></li>
-															<li><a href="single-shop.html">Jackets</a></li>
-															<li><a href="single-shop.html">Cap</a></li>
+															<li><a href="${shop}/contentpage.jsp">Sunglasses</a></li>
+															<li><a href="${shop}/contentpage.jsp">Glasses</a></li>
 														</ul>
 													</li>
 												</ul></li>
-											<li><a href="single-shop.html"><i
+											<li><a href="${shop}/contentpage.jsp"><i
+													class="fa flaticon-dress"></i>DRESS</a></li>
+											<li><a href="${shop}/contentpage.jsp"><i
+													class="fa flaticon-high-heel"></i>SHOES</a></li>
+											<li><a href="${shop}/contentpage.jsp"><i
+													class="fa flaticon-v-neck-shirt"></i>T-SHIRTS</a></li>
+											<li><a href="${shop}/contentpage.jsp"><i
 													class="fa flaticon-jacket"></i> JACKETS</a></li>
-											<li><a class="xt-nav-link" href="single-shop.html"><i
-													class="fa flaticon-cosmetics"></i> COSMETICS</a>
+											<li><a class="xt-nav-link"
+												href="${shop}/contentpage.jsp"><i
+													class="fa flaticon-cosmetics"></i>COSMETICS</a>
 												<ul class="mega-menu xt-column">
 													<li>
 														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Lipstick</a></li>
-															<li><a href="single-shop.html">Makeup Brush</a></li>
-															<li><a href="single-shop.html">Nail Polish</a></li>
-															<li><a href="single-shop.html"> Hair Dryers</a></li>
+															<li><a href="${shop}/contentpage.jsp">Lipstick</a></li>
+															<li><a href="${shop}/contentpage.jsp">Nail
+																	Polish</a></li>
 														</ul>
 													</li>
 												</ul></li>
-											<li><a class="xt-nav-link" href="single-shop.html"><i
-													class="fa flaticon-hijab"></i>BOURKHA & HIJAB</a>
-												<ul class="mega-menu xt-column">
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">Iranian</a></li>
-															<li><a href="single-shop.html">Arabian</a></li>
-															<li><a href="single-shop.html">Indian</a></li>
-															<li><a href="single-shop.html">Indonesian</a></li>
-														</ul>
-													</li>
-												</ul></li>
-											<li><a class="xt-nav-link" href="single-shop.html"><i
-													class="fa flaticon-jacket-1"></i>Coats & Gilets</a>
-												<ul class="mega-menu xt-column">
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="single-shop.html">German Coats</a></li>
-															<li><a href="single-shop.html">Bangladeshi
-																	Blezzar</a></li>
-															<li><a href="single-shop.html">Thailand Gilets</a></li>
-															<li><a href="single-shop.html">Indian Coats</a></li>
-														</ul>
-													</li>
-												</ul></li>
-											<li><a href="single-shop.html"><i
-													class="fa flaticon-dress-1"></i>Boutique</a></li>
-											<li><a href="#more-list"> <i
-													class="fa flaticon-menu"></i> More Categories
-											</a></li>
+
+											<li><a href="${shop}/contentpage.jsp"><i
+													class="fa flaticon-hijab"></i>ELECTRONICS</a></li>
 										</ul></li>
 								</ul>
 							</nav>
@@ -304,16 +234,15 @@
 													src="${shop}/assets/images/${orderItem.product.imgurl}"
 													alt=""
 													style="max-width: 80px; max-height: 80px; width: auto; height: auto;">
-													<h3>${orderItem.name}</h3> <span class="cart-price">${orderItem.number}
+													${orderItem.name}<span class="cart-price">${orderItem.number}
 														X $${orderItem.price}</span>
 											</a></li>
 										</c:forEach>
 										<li><a href="" class="subtotal top-checkout">
-												<h3>Subtotal :</h3> <span class="total-price">$${sessionScope.order.total}</span>
+												Subtotal : <span class="total-price">$${sessionScope.order.total}</span>
 										</a></li>
 										<li><a href="checkout.jsp" class="process top-checkout">
-												<h3>Process to Checkout</h3>
-										</a></li>
+												Process to Checkout </a></li>
 									</ul></li>
 							</ul>
 							<span class="xt-item-count">${fn:length(sessionScope.order.itemList)}</span>
@@ -323,41 +252,6 @@
 			</div>
 		</div>
 	</header>
-	<!--
-        |========================
-        |  MOBILE MENU
-        |========================
-        -->
-	<div class="menu-spacing">
-		<div class="container">
-			<div class="row">
-				<div class="mobile-menu-area visible-xs visible-sm">
-					<div class="mobile-menu">
-						<nav id="mobile-menu-active">
-							<ul class="main">
-								<li><a class="main-a" href="">Shirt</a></li>
-								<li><a class="main-a" href="">Pant</a></li>
-								<li class="active"><a class="main-a" href="#">Bourkha</a>
-									<ul>
-										<li><a href="#">Hijab</a></li>
-										<li><a href="#">Scarf</a></li>
-										<li><a href="#" class="main-a">Shirt</a>
-											<ul>
-												<li><a href="#">T-Shirt</a></li>
-												<li><a href="#">Trousers</a></li>
-												<li><a href="#">Jackets & sweater</a></li>
-												<li><a href="#">3 Piece</a></li>
-											</ul></li>
-									</ul></li>
-								<li><a class="main-a" href="">Shawl</a></li>
-								<li><a class="main-a" href="">Other</a></li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!--
         |========================
         |   PRODUCT DESCRIPTION
@@ -475,7 +369,7 @@
 								class="tab-pane xt-pane xt-description fade in active"
 								id="description">
 								<h3>Product Description</h3>
-								<b>Description</b> </br> <span>${requestScope.product.remark }</span>
+								<b>Description</b> <br> <span>${requestScope.product.remark }</span>
 							</div>
 							<div role="tabpanel" class="tab-pane xt-pane fade"
 								id="specification">
@@ -535,7 +429,7 @@
 							<ul>
 								<li><a href=""><i class="fa fa-caret-right"></i>Shopping
 										& return</a></li>
-								<li><a href=""><i class="fa fa-caret-right"></i>Seacure
+								<li><a href=""><i class="fa fa-caret-right"></i>Secure
 										Shopping</a></li>
 								<li><a href=""><i class="fa fa-caret-right"></i>International
 										Shopping </a></li>

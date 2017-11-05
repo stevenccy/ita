@@ -24,9 +24,9 @@ public class OrderItemController extends BaseController{
 
 	@RequestMapping("/removeOrderItem")
 	@ResponseBody
-	public Object removeOrderItem(String pid) {
+	public Object removeOrderItem(String id) {
 		Order order = (Order) session.getAttribute("order");
-		orderItemService.removeOrderItem(pid, order);
+		orderItemService.removeOrderItem(id, order);
 		// 更新购物项之后需要重新计算总价格
 		order.setTotal(orderService.cluTotal(order));
 		return order.getTotal();

@@ -16,11 +16,14 @@ public interface ProductService {
 
 	public void delete(String id);
 
-	Product getByID(String id);
+	public Product getByID(String id);
 
 	// 查询分页
 	public Page<Product> queryByName(String keyword, int currentPage, int size);
+	
+	public Iterable<Product> queryByCid( String cid);
+
 	@Query("SELECT p FROM Product p WHERE p.category.id = :categoryId")
-	Iterable<Product> queryByCid( String cid);
+	public Page<Product> queryCategoryForList(String cid, int currentPage, int size);
 
 }
