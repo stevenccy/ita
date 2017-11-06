@@ -100,8 +100,8 @@
 										<ul class="dropdown-menu">
 											<li>
 												<div class="navbar-content">
-													<span>User: ${user.user_name}</span></br>
-													<span>Role: ${user.role}</span>
+													<span>User: ${user.user_name}</span></br> <span>Role:
+														${user.role}</span>
 												</div>
 											</li>
 										</ul></li>
@@ -112,17 +112,24 @@
 				</div>
 				<div class="user-dashboard">
 					<div class="container" style="margin-top: 10px">
-						<form action="/shop/ProductServlet" method="get">
+						<form action="/shop/ProductController/update.mvc" method="get">
 							<div class="form-group">
 								商品名： <input type="text" class="form-control" name="name"
 									value="${requestScope.product.name}" /><br /> 價格：<input
 									type="text" class="form-control" name="price"
 									value="${requestScope.product.price}" /><br /> 備註：<input
 									type="text" class="form-control" name="remark"
-									value="${requestScope.product.remark}" /><br />
+									value="${requestScope.product.remark}" /><br /> Category: <select
+									class="form-control" name="category.id" value="${requestScope.product.category.id}">
+									<c:forEach items="${applicationScope.catList}" var="category">
+										<option value="${category.id}" ${category.id == requestScope.product.category.id ? 'selected' : ''}>${category.name}</option>
+									</c:forEach>
+								</select> <br />
+								<br>
+
 								<button type="submit" class="add-project">提交</button>
-								<input type="hidden" name="type" value="update" /> <input
-									type="hidden" name="id" value="${requestScope.product.id}" />
+								<input type="hidden" name="id"
+									value="${requestScope.product.id}" />
 							</div>
 						</form>
 					</div>

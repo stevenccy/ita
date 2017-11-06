@@ -148,7 +148,7 @@
 										<td><fmt:formatDate pattern="yyyy-MM-dd"
 												value="${product.pdate}" /></td>
 										<td><a
-											href="${shop}/ProductController/getByID.mvc?id=${product.id}">update</a>|<a
+											href="${shop}/ProductController/getById.mvc?id=${product.id}">update</a>|<a
 											href="${shop}/ProductController/delete/${product.id}/${page.number-1}">delete</a></td>
 									</tr>
 								</c:forEach>

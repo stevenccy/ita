@@ -278,7 +278,7 @@
 																<a class="thumbnail pull-left" href="#"> <img
 																	class="media-object"
 																	src="${shop}/assets/images/${orderItem.product.imgurl}"
-																	style="max-width: 120px; max-height: 120px;">
+																	>
 																</a>
 															</div>
 

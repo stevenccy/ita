@@ -241,8 +241,10 @@
 										<li><a href="" class="subtotal top-checkout">
 												Subtotal : <span class="total-price">$${sessionScope.order.total}</span>
 										</a></li>
-										<li><a href="checkout.jsp" class="process top-checkout">
-												Process to Checkout </a></li>
+										<li><a href="${shop}/checkout.jsp"
+											class="process top-checkout">
+												<h3>Proceed to Checkout</h3>
+										</a></li>
 									</ul></li>
 							</ul>
 							<span class="xt-item-count">${fn:length(sessionScope.order.itemList)}</span>
@@ -312,17 +314,18 @@
 									</ul>
 								</div>
 								-->
-								<div class="select-quantity">
-									<input type="number" step="1" name="quantity" value="1"
-										title="Qty" class="input-text qty text" size="4">
-								</div>
-								<div class="product-add-cart">
-									<a
-										href="${shop}/OrderItemController/addOrderItem.mvc?id=${product.id}"
-										class="btn btn-fill">Add to cart</a> <a href="#"
-										class="btn liked "><i class="fa fa-heart-o xt-no-color"></i><i
-										class="fa fa-heart xt-color"></i></a>
-								</div>
+								<form action="${shop}/OrderItemController/addOrderItem.mvc">
+									<input type="hidden" name="id" value="${product.id}">
+
+									<div class="select-quantity">
+										<input type="number" step="1" name="quantity" value="1"
+											title="Qty" class="input-text qty text" size="4">
+									</div>
+
+									<div class="product-add-cart">
+										<input type="submit" value="Add to cart" class="btn btn-fill">
+									</div>
+								</form>
 								<!--  
 								<div class="product-additional-info">
 									<ul>
@@ -340,7 +343,6 @@
 			</div>
 		</div>
 	</section>
-	<div class="clearfix"></div>
 	<div class="xt-product-description">
 		<div class="container">
 			<div class="row section-separator">

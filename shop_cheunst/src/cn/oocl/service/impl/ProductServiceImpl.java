@@ -19,13 +19,13 @@ public  class ProductServiceImpl implements ProductService {
 	@Resource(name = "productDao")
 	private ProductDao productDao = null;
 
-	public static void main(String[] args) {
-		// 必須使用spring來創建對象才會有ioc功能
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring-bean.xml");
-		ProductService serviceImpl = context.getBean("productService", ProductService.class);
-		Page<Product> page = serviceImpl.queryByName("",1,2);
-		System.out.println(page);
-	}
+//	public static void main(String[] args) {
+//		// 必須使用spring來創建對象才會有ioc功能
+//		ApplicationContext context = new ClassPathXmlApplicationContext("spring-bean.xml");
+//		ProductService serviceImpl = context.getBean("productService", ProductService.class);
+//		Page<Product> page = serviceImpl.queryByName("",1,2);
+//		System.out.println(page);
+//	}
 
 	@Override
 	public Page<Product> queryByName(String keyword, int currentPage, int size) {

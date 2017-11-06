@@ -12,12 +12,16 @@ import cn.oocl.service.OrderService;
 @RequestMapping("/OrderController")
 public class OrderController extends BaseController {
 
-	
-	
 	@RequestMapping("/save")
-	public String save(Order order) {
+	public String save(String name,String address,String phone) {
+		Order order = (Order)session.getAttribute("order");
+		order.setAddress(address);
+		order.setName(name);
+		order.setPhone(phone);
+		// 购物车与购物项目会级联入库
 		orderService.save(order);
-		
-		return "redirect:/checkout.jsp"; // no need project name
+		session.setAttribute("order", new Order());
+//		session.removeAttribute("order");
+		return "redirect:/bank.jsp"; // 无论转发还是重定向都不需要工程名
 	}
 }

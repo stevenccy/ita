@@ -209,18 +209,21 @@
 							<td class="align_center"><a href="#" class="edit">${orderItem.product.id}</a>
 							</td>
 							<td width="80px">
-							<div style="minwidth=50px; maxwidth=50px; minheight=70px;maxheight=70px	"><img src="${shop}/assets/images/${orderItem.product.imgurl }" /></div></td>
+								<div style="max-height:100px;min-height:100px">
+									<img style="height:100px;max-width:500px;width: expression(this.width > 500 ? 500: true);" src="${shop}/assets/images/${orderItem.product.imgurl }" />
+								</div>
+							</td>
 							<td class="align_left"><a class="pr_name" href="#">${orderItem.name}</a>
 							</td>
-							<td class="align_center vline">￥${orderItem.price}</td>
+							<td class="align_center vline">$${orderItem.price}</td>
 							<td class="align_center vline">${orderItem.number}</td>
-							<td class="align_center vline">￥${orderItem.price*orderItem.number}</td>
+							<td class="align_center vline">$${orderItem.price*orderItem.number}</td>
 						</tr>
 					</c:forEach>
 				</table>
 				<div class="sum">
 					<div class="fr">
-						<span>SUM：</span><b>￥${sessionScope.order.total}</b>
+						<span style="padding-left:50px; ">   SUM：</span><b>$${sessionScope.order.total}</b>
 					</div>
 				</div>
 			</div>

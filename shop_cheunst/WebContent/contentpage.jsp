@@ -229,8 +229,9 @@
 									<li><a href="" class="subtotal top-checkout">
 											<h3>Subtotal :</h3> <span class="total-price">$${sessionScope.order.total}</span>
 									</a></li>
-									<li><a href="" class="process top-checkout">
-											<h3>Process to Checkout</h3>
+									<li><a href="${shop}/checkout.jsp"
+										class="process top-checkout">
+											<h3>Proceed to Checkout</h3>
 									</a></li>
 								</ul></li>
 						</ul>
@@ -306,7 +307,8 @@
 									varStatus="num">
 									<div class="col-md-4 col-sm-4">
 										<div class="xt-feature">
-											<div class="product-img" style="min-height: 300px; max-height: 300px; width: auto; height: auto;">
+											<div class="product-img"
+												style="min-height: 300px; max-height: 300px; width: auto; height: auto;">
 												<a
 													href="${shop}/ProductController/detail.mvc?id=${product.id}">
 													<img src="${shop }/assets/images/${product.imgurl}" alt=""
@@ -333,7 +335,7 @@
 													</div>
 													<div class="add-cart">
 														<a
-															href="${shop}/OrderItemController/addOrderItem.mvc?id=${product.id}"
+															href="${shop}/OrderItemController/addOrderItem.mvc?id=${product.id}&quantity=1"
 															class="btn btn-fill">Add to cart</a>
 														<ul class="reaction">
 															<li><a href=""><i class="fa fa-search"></i></a></li>

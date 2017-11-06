@@ -61,7 +61,7 @@ public class ProductController extends BaseController {
 	@RequestMapping("/update")
 	public String update(Product product) {
 		productService.update(product);
-		return "forward:/admin/admin_query.jsp";
+		return "forward:/ProductController/pagination.mvc?currentPage=1";
 	}
 
 	@RequestMapping("/delete/{id}/{currentPage}")

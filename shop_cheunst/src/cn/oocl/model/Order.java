@@ -17,24 +17,19 @@ import javax.persistence.Table;
 
 // 購物車,當提交數據之後就是訂單,它與訂單項的關係是一對多
 @Entity
-@Table (name="orders")
+@Table(name="ORDERS")  // 對應的表名
 public class Order implements Serializable {
 
 	private static final long serialVersionUID = -2792665360763002611L;
-	// ID,總價格,送貨地址,聯繫電話
 	@Id
-	@GeneratedValue(generator = "order_Seq", strategy = GenerationType.AUTO)
-	@SequenceGenerator(name = "order_Seq",initialValue=1,allocationSize=1)
+	@GeneratedValue(generator = "orderSeq",strategy=GenerationType.AUTO)
+	@SequenceGenerator(name="orderSeq",initialValue = 1,allocationSize=1,sequenceName="order_seq")
 	private String id;
-	private String name;
 	private BigDecimal total;
 	private String address;
+	private String name;
 	private String phone;
 	
-	@OneToMany(cascade=CascadeType.PERSIST) // default can't insert cascade 
-	@JoinColumn(name="oid")
-	private List<OrderItem> itemList = new ArrayList<OrderItem>();
-
 	public String getName() {
 		return name;
 	}
@@ -42,9 +37,10 @@ public class Order implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	// 必須實例化,否則添加訂單項會拋出空異常
-
+	@OneToMany(cascade = CascadeType.PERSIST)  // 默認是支持級聯入庫的,需要自己配置
+	@JoinColumn(name="oid")
+	private List<OrderItem> itemList = new ArrayList<OrderItem>();
+	
 	public List<OrderItem> getItemList() {
 		return itemList;
 	}

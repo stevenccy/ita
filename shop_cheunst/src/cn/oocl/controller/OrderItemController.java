@@ -33,11 +33,11 @@ public class OrderItemController extends BaseController{
 	}
 
 	@RequestMapping("/addOrderItem")
-	public String addOrderItem(String id) {
+	public String addOrderItem(String id,String quantity) {
 		Product product = productService.getByID(id);
 		OrderItem newItem = new OrderItem();
 		newItem.setName(product.getName());
-		newItem.setNumber(1);
+		newItem.setNumber(Integer.parseInt(quantity));
 		newItem.setPrice(product.getPrice());
 		newItem.setProduct(product); // 在判斷商品是否重複時需要商品的ID
 		// 3:HttpSessionListener 在創建session時默認創建購物車
