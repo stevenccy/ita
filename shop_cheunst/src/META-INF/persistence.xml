@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="shop" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>cn.oocl.model.Account</class>
@@ -8,12 +10,17 @@
 		<class>cn.oocl.model.Product</class>
 		<class>cn.oocl.model.Category</class>
 		<properties>
-			<property name="eclipselink.target-server" value="None"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@//hkln456p:1521/testdb.oocl"/>
-			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-			<property name="javax.persistence.jdbc.user" value="HKIE11"/>
-			<property name="javax.persistence.jdbc.password" value="hkie11"/>
-			<property name="eclipselink.jdbc.exclusive-connection.mode" value="Transactional"/>
+			<property name="eclipselink.target-server" value="None" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:oracle:thin:@//hkln456p:1521/testdb.oocl" />
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.user" value="HKIE11" />
+			<property name="javax.persistence.jdbc.password" value="hkie11" />
+			<property name="eclipselink.jdbc.exclusive-connection.mode"
+				value="Transactional" />
+			<property name="eclipselink.cache.shared.default" value="false" />
+			<property name="eclipselink.cache.size.default" value="0" />
+			<property name="eclipselink.cache.type.default" value="None" />
 		</properties>
 	</persistence-unit>
 </persistence>

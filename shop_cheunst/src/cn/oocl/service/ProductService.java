@@ -23,7 +23,6 @@ public interface ProductService {
 	
 	public Iterable<Product> queryByCid( String cid);
 
-	@Query("SELECT p FROM Product p WHERE p.category.id = :categoryId")
 	public Page<Product> queryCategoryForList(String cid, int currentPage, int size);
 
 }

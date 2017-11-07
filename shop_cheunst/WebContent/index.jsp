@@ -140,7 +140,8 @@
 					<ul class="nav navbar-nav navbar-right ep-mobile-menu"
 						id="navbar-nav">
 						<li class="active"><a href="index.jsp">Home</a></li>
-						<li ><a href="${shop}/ProductController/queryForList.mvc?keyword=">Shop</a></li>
+						<li><a
+									href="${shop}/ProductController/queryForList.mvc?keyword=&currentPage=0">Shop</a></li>
 						<li><a href="">About</a></li>
 						<li><a href="">Contact</a></li>
 					</ul>
@@ -159,36 +160,48 @@
 						<ul class="xt-side-menu">
 							<li><a href="#">All Category</a>
 								<ul class="xt-dropdown">
-									<li><a class="xt-nav-link" href="contentpage.jsp"><i
+									<li><a class="xt-nav-link"
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=1&currentPage=0"><i
 											class="fa flaticon-glasses"></i> EYE WEAR</a>
 										<ul class="mega-menu xt-column">
 											<li>
 												<ul class="xt-single-mega">
-													<li><a href="contentpage.jsp">Sunglasses</a></li>
-													<li><a href="contentpage.jsp">Glasses</a></li>
+													<li><a
+														href="${shop}/ProductController/queryCategoryForList.mvc?cid=1&currentPage=0">Sunglasses</a></li>
+													<li><a
+														href="${shop}/ProductController/queryCategoryForList.mvc?cid=1&currentPage=0">Glasses</a></li>
 												</ul>
 											</li>
 										</ul></li>
-									<li><a href="contentpage.jsp"><i
+									<li><a
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=2&currentPage=0"><i
 											class="fa flaticon-dress"></i>DRESS</a></li>
-									<li><a href="contentpage.jsp"><i
+									<li><a
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=3&currentPage=0"><i
 											class="fa flaticon-high-heel"></i>SHOES</a></li>
-									<li><a href="contentpage.jsp"><i
+									<li><a
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=4&currentPage=0"><i
 											class="fa flaticon-v-neck-shirt"></i>T-SHIRTS</a></li>
-									<li><a href="contentpage.jsp"><i
+									<li><a
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=11&currentPage=0"><i
 											class="fa flaticon-jacket"></i> JACKETS</a></li>
-									<li><a class="xt-nav-link" href="contentpage.jsp"><i
+									<li><a class="xt-nav-link"
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=13&currentPage=0"><i
 											class="fa flaticon-cosmetics"></i>COSMETICS</a>
 										<ul class="mega-menu xt-column">
 											<li>
 												<ul class="xt-single-mega">
-													<li><a href="contentpage.jsp">Lipstick</a></li>
-													<li><a href="contentpage.jsp">Nail Polish</a></li>
+													<li><a
+														href="${shop}/ProductController/queryCategoryForList.mvc?cid=13&currentPage=0">Lipstick</a></li>
+													<li><a
+														href="${shop}/ProductController/queryCategoryForList.mvc?cid=13&currentPage=0">Nail
+															Polish</a></li>
 												</ul>
 											</li>
 										</ul></li>
 
-									<li><a href="contentpage.jsp"><i
+									<li><a
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=7&currentPage=0"><i
 											class="fa flaticon-hijab"></i>ELECTRONICS</a></li>
 								</ul></li>
 						</ul>
@@ -237,7 +250,8 @@
 									<li><a href="" class="subtotal top-checkout">
 											<h3>Subtotal :</h3> <span class="total-price">$${sessionScope.order.total}</span>
 									</a></li>
-									<li><a href="${shop}/checkout.jsp" class="process top-checkout">
+									<li><a href="${shop}/checkout.jsp"
+										class="process top-checkout">
 											<h3>Proceed to Checkout</h3>
 									</a></li>
 								</ul></li>

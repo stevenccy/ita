@@ -19,7 +19,7 @@ public interface ProductDao extends CrudRepository<Product, String> {
 	@Query("SELECT p FROM Product p WHERE p.category.id = :categoryId")
 	public Iterable <Product> queryByCid(@Param("categoryId") String cid);
 	
-	@Query("SELECT p FROM Product p WHERE p.category.id = :categoryId")
+	@Query("SELECT p FROM Product p WHERE p.category.id LIKE :categoryId")
 	public Page<Product> queryCategoryForList(@Param("categoryId")String cid, Pageable pageable);
 	
 	

@@ -132,7 +132,7 @@
 						id="navbar-nav">
 						<li><a href="${shop}/index.jsp">Home</a></li>
 						<li><a
-							href="${shop}/ProductController/queryForList.mvc?keyword=">Shop</a></li>
+							href="${shop}/ProductController/queryForList.mvc?keyword=&currentPage=0">Shop</a></li>
 						<li><a href="">About</a></li>
 						<li><a href="contact-us.jsp">Contact</a></li>
 					</ul>
@@ -151,36 +151,48 @@
 						<ul class="xt-side-menu">
 							<li><a href="#">All Category</a>
 								<ul class="xt-dropdown">
-									<li><a class="xt-nav-link" href="${shop}/contentpage.jsp"><i
+									<li><a class="xt-nav-link"
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=1&currentPage=0"><i
 											class="fa flaticon-glasses"></i> EYE WEAR</a>
 										<ul class="mega-menu xt-column">
 											<li>
 												<ul class="xt-single-mega">
-													<li><a href="${shop}/contentpage.jsp">Sunglasses</a></li>
-													<li><a href="${shop}/contentpage.jsp">Glasses</a></li>
+													<li><a
+														href="${shop}/ProductController/queryCategoryForList.mvc?cid=1&currentPage=0">Sunglasses</a></li>
+													<li><a
+														href="${shop}/ProductController/queryCategoryForList.mvc?cid=1&currentPage=0">Glasses</a></li>
 												</ul>
 											</li>
 										</ul></li>
-									<li><a href="${shop}/contentpage.jsp"><i
+									<li><a
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=2&currentPage=0"><i
 											class="fa flaticon-dress"></i>DRESS</a></li>
-									<li><a href="${shop}/contentpage.jsp"><i
+									<li><a
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=3&currentPage=0"><i
 											class="fa flaticon-high-heel"></i>SHOES</a></li>
-									<li><a href="${shop}/contentpage.jsp"><i
+									<li><a
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=4&currentPage=0"><i
 											class="fa flaticon-v-neck-shirt"></i>T-SHIRTS</a></li>
-									<li><a href="${shop}/contentpage.jsp"><i
+									<li><a
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=11&currentPage=0"><i
 											class="fa flaticon-jacket"></i> JACKETS</a></li>
-									<li><a class="xt-nav-link" href="${shop}/contentpage.jsp"><i
+									<li><a class="xt-nav-link"
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=13&currentPage=0"><i
 											class="fa flaticon-cosmetics"></i>COSMETICS</a>
 										<ul class="mega-menu xt-column">
 											<li>
 												<ul class="xt-single-mega">
-													<li><a href="${shop}/contentpage.jsp">Lipstick</a></li>
-													<li><a href="${shop}/contentpage.jsp">Nail Polish</a></li>
+													<li><a
+														href="${shop}/ProductController/queryCategoryForList.mvc?cid=13&currentPage=0">Lipstick</a></li>
+													<li><a
+														href="${shop}/ProductController/queryCategoryForList.mvc?cid=13&currentPage=0">Nail
+															Polish</a></li>
 												</ul>
 											</li>
 										</ul></li>
 
-									<li><a href="${shop}/contentpage.jsp"><i
+									<li><a
+										href="${shop}/ProductController/queryCategoryForList.mvc?cid=7&currentPage=0"><i
 											class="fa flaticon-hijab"></i>ELECTRONICS</a></li>
 								</ul></li>
 						</ul>
@@ -193,7 +205,10 @@
 						<div
 							class="form-group xt-form search-bar  col-md-8 col-sm-8 col-xs-7 padding-right-o">
 							<input type="text" class="form-control" name="keyword"
-								placeholder="Search for things you want to buy">
+								placeholder="Search for things you want to buy"> <input
+								type="hidden" class="form-control" name="currentPage"
+								value="0">
+
 						</div>
 						<div
 							class="form-group xt-form xt-search-cat col-md-4 col-sm-4 col-xs-5 padding-left-o ">
@@ -282,20 +297,64 @@
 						<div class="section-separator">
 							<div class="xt-filter-nav">
 								<div class="col-md-7 col-sm-7 col-xs-10 xt-show-item"></div>
-								<div class="col-md-5 col-sm-5 col-xs-12">
-									<div class="xt-page-pagination">
-										<nav aria-label="Page navigation">
-										<ul class="pagination xt-pagination">
-											<li class="active"><a href="#">1</a></li>
-											<li><a href="#">2</a></li>
-											<li><a href="#">3</a></li>
-											<li><a href="#">4</a></li>
-											<li><a href="#" aria-label="Next"><i
-													class="fa fa-caret-right"></i></a></li>
-										</ul>
-										</nav>
+								<c:if test="${not empty fn:trim(cid)}">
+									<div class="col-md-5 col-sm-5 col-xs-12">
+										<div class="xt-page-pagination">
+											<nav aria-label="Page navigation">
+											<ul class="pagination xt-pagination">
+												<li
+													<c:if test="${queryList.firstPage}">
+                        class="disabled"
+</c:if>><a
+													href="${shop}/ProductController/queryCategoryForList.mvc?currentPage=${num-1}&cid=${cid}"
+													aria-label="Next"><i class="fa fa-caret-left"></i></a></li>
+												<c:forEach begin="1" end="${queryList.totalPages}" var="num">
+													<li
+														<c:if test="${queryList.number==num-1}">
+        class="active"
+        </c:if>><a
+														href="${shop}/ProductController/queryCategoryForList.mvc?currentPage=${num-1}&cid=${cid}">${num}</a></li>
+												</c:forEach>
+												<li
+													<c:if test="${queryList.lastPage}">
+    class="disabled"
+    </c:if>><a
+													href="${shop}/ProductController/queryCategoryForList.mvc?currentPage=${num-1}&cid=${cid}"
+													aria-label="Next"><i class="fa fa-caret-right"></i></a></li>
+											</ul>
+											</nav>
+										</div>
 									</div>
-								</div>
+								</c:if>
+								<c:if test="${empty fn:trim(cid)}">
+									<div class="col-md-5 col-sm-5 col-xs-12">
+										<div class="xt-page-pagination">
+											<nav aria-label="Page navigation">
+											<ul class="pagination xt-pagination">
+												<li
+													<c:if test="${queryList.firstPage}">
+                        class="disabled"
+</c:if>><a
+													href="${shop}/ProductController/queryForList.mvc?currentPage=${num-1}&keyword=${keyword}"
+													aria-label="Next"><i class="fa fa-caret-left"></i></a></li>
+												<c:forEach begin="1" end="${queryList.totalPages}" var="num">
+													<li
+														<c:if test="${queryList.number==num-1}">
+        class="active"
+        </c:if>><a
+														href="${shop}/ProductController/queryForList.mvc?currentPage=${num-1}&keyword=${keyword}">${num}</a></li>
+												</c:forEach>
+												<li
+													<c:if test="${queryList.lastPage}">
+    class="disabled"
+    </c:if>><a
+													href="${shop}/ProductController/queryForList.mvc?currentPage=${num-1}&keyword=${keyword}"
+													aria-label="Next"><i class="fa fa-caret-right"></i></a></li>
+											</ul>
+											</nav>
+										</div>
+									</div>
+								</c:if>
 								<div class="clearfix"></div>
 								<div class="col-xs-12 xt-top-hr">
 									<hr class="xt-hr">
@@ -356,20 +415,6 @@
 							<div class="xt-filter-nav padding-bottom-60">
 								<div class="col-md-5 col-sm-5 col-xs-10 xt-show-item"></div>
 								<div class="col-md-4 col-sm-4 col-xs-12"></div>
-								<div class="col-md-3 col-sm-3 col-xs-12">
-									<div class="xt-page-pagination">
-										<nav aria-label="Page navigation">
-										<ul class="pagination xt-pagination">
-											<li class="active"><a href="#">1</a></li>
-											<li><a href="#">2</a></li>
-											<li><a href="#">3</a></li>
-											<li><a href="#">4</a></li>
-											<li><a href="#" aria-label="Next"><i
-													class="fa fa-caret-right"></i></a></li>
-										</ul>
-										</nav>
-									</div>
-								</div>
 							</div>
 						</div>
 						<!---->

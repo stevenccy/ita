@@ -129,7 +129,7 @@
 								id="navbar-nav">
 								<li><a href="${shop}/index.jsp">Home</a></li>
 								<li><a
-									href="${shop}/ProductController/queryForList.mvc?keyword=">Shop</a></li>
+									href="${shop}/ProductController/queryForList.mvc?keyword=&currentPage=0">Shop</a></li>
 								<li><a href="">About</a></li>
 								<li><a href="">Contact</a></li>
 							</ul>
@@ -144,80 +144,67 @@
 				<div class="row">
 					<div class="col-md-3 left-menu-wrapper">
 						<div class="xt-sidenav hidden-xs hidden-sm">
-							<nav>
-								<ul class="xt-side-menu">
-									<li><a href="#">All Category</a>
-										<ul class="xt-dropdown">
-											<li><a class="xt-nav-link" href="contentpage.jsp"><i
-													class="fa flaticon-glasses"></i> EYE WEAR</a>
-												<ul class="mega-menu xt-column">
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="${shop}/contentpage.jsp">Sunglasses</a></li>
-															<li><a href="${shop}/contentpage.jsp">Glasses</a></li>
-														</ul>
-													</li>
-												</ul></li>
-											<li><a href="${shop}/contentpage.jsp"><i
-													class="fa flaticon-dress"></i>DRESS</a></li>
-											<li><a href="${shop}/contentpage.jsp"><i
-													class="fa flaticon-high-heel"></i>SHOES</a></li>
-											<li><a href="${shop}/contentpage.jsp"><i
-													class="fa flaticon-v-neck-shirt"></i>T-SHIRTS</a></li>
-											<li><a href="${shop}/contentpage.jsp"><i
-													class="fa flaticon-jacket"></i> JACKETS</a></li>
-											<li><a class="xt-nav-link"
-												href="${shop}/contentpage.jsp"><i
-													class="fa flaticon-cosmetics"></i>COSMETICS</a>
-												<ul class="mega-menu xt-column">
-													<li>
-														<ul class="xt-single-mega">
-															<li><a href="${shop}/contentpage.jsp">Lipstick</a></li>
-															<li><a href="${shop}/contentpage.jsp">Nail
-																	Polish</a></li>
-														</ul>
-													</li>
-												</ul></li>
-
-											<li><a href="${shop}/contentpage.jsp"><i
-													class="fa flaticon-hijab"></i>ELECTRONICS</a></li>
+																			<nav>
+						<ul class="xt-side-menu">
+							<li><a href="#">All Category</a>
+								<ul class="xt-dropdown">
+									<li><a class="xt-nav-link" href="${shop}/ProductController/queryCategoryForList.mvc?cid=1&currentPage=0"><i
+											class="fa flaticon-glasses"></i> EYE WEAR</a>
+										<ul class="mega-menu xt-column">
+											<li>
+												<ul class="xt-single-mega">
+													<li><a href="${shop}/ProductController/queryCategoryForList.mvc?cid=1&currentPage=0">Sunglasses</a></li>
+													<li><a href="${shop}/ProductController/queryCategoryForList.mvc?cid=1&currentPage=0">Glasses</a></li>
+												</ul>
+											</li>
 										</ul></li>
-								</ul>
-							</nav>
+									<li><a href="${shop}/ProductController/queryCategoryForList.mvc?cid=2&currentPage=0"><i
+											class="fa flaticon-dress"></i>DRESS</a></li>
+									<li><a href="${shop}/ProductController/queryCategoryForList.mvc?cid=3&currentPage=0"><i
+											class="fa flaticon-high-heel"></i>SHOES</a></li>
+									<li><a href="${shop}/ProductController/queryCategoryForList.mvc?cid=4&currentPage=0"><i
+											class="fa flaticon-v-neck-shirt"></i>T-SHIRTS</a></li>
+									<li><a href="${shop}/ProductController/queryCategoryForList.mvc?cid=11&currentPage=0"><i
+											class="fa flaticon-jacket"></i> JACKETS</a></li>
+									<li><a class="xt-nav-link" href="${shop}/ProductController/queryCategoryForList.mvc?cid=13&currentPage=0"><i
+											class="fa flaticon-cosmetics"></i>COSMETICS</a>
+										<ul class="mega-menu xt-column">
+											<li>
+												<ul class="xt-single-mega">
+													<li><a href="${shop}/ProductController/queryCategoryForList.mvc?cid=13&currentPage=0">Lipstick</a></li>
+													<li><a href="${shop}/ProductController/queryCategoryForList.mvc?cid=13&currentPage=0">Nail Polish</a></li>
+												</ul>
+											</li>
+										</ul></li>
+
+									<li><a href="${shop}/ProductController/queryCategoryForList.mvc?cid=7&currentPage=0"><i
+											class="fa flaticon-hijab"></i>ELECTRONICS</a></li>
+								</ul></li>
+						</ul>
+						</nav>
 						</div>
 					</div>
 					<div class="col-md-8 col-sm-10 col-xs-12 xt-header-search">
+					<form action="${shop}/ProductController/queryForList.mvc">
 						<div
 							class="form-group xt-form search-bar  col-md-8 col-sm-8 col-xs-7 padding-right-o">
-							<input type="text" class="form-control"
-								placeholder="Search for snippets" />
+							<input type="text" class="form-control" name="keyword"
+								placeholder="Search for things you want to buy"> <input
+								type="hidden" class="form-control" name="currentPage"
+								value="0">
+
 						</div>
 						<div
 							class="form-group xt-form xt-search-cat col-md-4 col-sm-4 col-xs-5 padding-left-o ">
-							<div class="xt-select xt-search-opt">
-								<select class="xt-dropdown-search select-beast">
-									<option>All Categories</option>
-									<option>Boutique</option>
-									<option>Shirt</option>
-									<option>Pants</option>
-									<option>Jeans</option>
-									<option>Bourkha</option>
-									<option>Hijab</option>
-									<option>T-Shirt</option>
-									<option>Coats</option>
-									<option>Blezzar</option>
-									<option>Gilets</option>
-									<option>3 Piece</option>
-									<option>Cosmetic</option>
-								</select>
-							</div>
 							<div class="xt-search-opt xt-search-btn">
-								<button type="button" class="btn btn-primary btn-search">
+								<button type="submit" class="btn btn-primary btn-search"
+									style="height: 47px">
 									<i class="fa fa-search"></i>
 								</button>
 							</div>
 						</div>
-					</div>
+					</form>
+				</div>
 					<div class="col-md-1 col-sm-2 col-xs-2">
 						<div class="xt-cart">
 							<ul>

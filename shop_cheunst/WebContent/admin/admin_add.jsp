@@ -5,13 +5,43 @@
 <head>
 <title>Admin Page</title>
 <%@include file="/WEB-INF/public.jspf"%>
-</head>
+<script src="${shop}/assets/plugins/js/image-picker-min.js"></script>
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
 	rel="stylesheet"
 	integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
 	crossorigin="anonymous">
 <link href="${shop}/css/admin_style.css" rel="stylesheet">
+<script type="text/javascript">
+	function getImage(obj) {
+		console.log(obj);
+		alert(obj.value);
+		//$("#selectImages").imagespicker({
+		//	hide_select : true
+		//});
+
+		$.ajax({
+			url : "${shop}/ImageController/search.mvc",
+			type : "GET",
+			data : {
+				searchTerm : obj.value
+			},
+			dataType : "json",
+			success : function(data) {
+				console.log(data.jsonResponse);
+				var selectImages = $('#selectImages');
+				for (var i = 0; i < 5; i++) {
+					console.log(data.jsonResponse.value[i].contentUrl);
+					selectImages.append('<option data-img-src="'+data.jsonResponse.value[i].contentUrl)
+				}
+			}
+		});
+
+	}
+</script>
+
+</head>
+
 <body class="home">
 	<div class="container-fluid display-table">
 		<div class="row display-table-row">
@@ -100,8 +130,8 @@
 										<ul class="dropdown-menu">
 											<li>
 												<div class="navbar-content">
-													<span>User: ${user.user_name}</span></br>
-													<span>Role: ${user.role}</span>
+													<span>User: ${user.user_name}</span></br> <span>Role:
+														${user.role}</span>
 												</div>
 											</li>
 										</ul></li>
@@ -114,14 +144,16 @@
 					<h1>Add Item</h1>
 					<h3>Welcome ${user.user_name}.</h3>
 					<div class="container" style="margin-top: 10px">
-						<form class="form-horizontal" action="${shop}/ProductController/save.mvc"
-							method="post" enctype="multipart/form-data">
+						<form class="form-horizontal"
+							action="${shop}/ProductController/save.mvc" method="post"
+							enctype="multipart/form-data">
 
 							<div class="form-group">
 								<label class="col-sm-2 control-label">Name:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" name="name"
-										placeholder="Please enter the product name.">
+										placeholder="Please enter the product name."
+										onblur="getImage(this)">
 								</div>
 							</div>
 
@@ -132,7 +164,10 @@
 										step="0.01" placeholder="Please enter the price.">
 								</div>
 							</div>
+							<select class="image-picker show-html" id="selectImages">
+							</select>
 
+							<div id="selectImages"></div>
 							<div class="form-group">
 								<label class="col-sm-2 control-label">Photo:</label>
 								<div class="col-sm-4">

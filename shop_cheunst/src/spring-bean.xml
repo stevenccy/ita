@@ -10,27 +10,49 @@
 	   http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd">
 
 	<!-- SPRING DATA & DATA INTEGRATION -->
-	
+
 	<!-- define annotion scan package -->
 	<!-- <context:component-scan base-package="cn.oocl.."></context:component-scan> -->
-	
+	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+		<property name="keySerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+		</property>
+	</bean>
+
+	<bean id="connectionFactory"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+		<property name="hostName" value="10.222.58.178" />
+		<property name="port" value="6739" />
+		<property name="poolConfig" ref="poolConfig" />
+		<property name="password" value="admin" />
+	</bean>
+	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxTotal" value="5000" />
+		<property name="maxIdle" value="100" />
+		<property name="maxWaitMillis" value="1000" />
+	</bean>
+
 	<context:component-scan base-package="cn.oocl..">
-		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
-	
+
 	<jpa:repositories base-package="cn.oocl.dao"
 		entity-manager-factory-ref="entityManagerFactory" />
-	
-	
 
-	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
 		<property name="persistenceUnitName" value="shop" />
 	</bean>
 
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
-	
+
 	<tx:advice transaction-manager="transactionManager" id="tx">
 		<!-- 配置哪些方法需要事务，并没有指定 事务切入的类 -->
 		<tx:attributes>
