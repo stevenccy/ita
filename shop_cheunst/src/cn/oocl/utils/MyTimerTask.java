@@ -34,7 +34,7 @@ public class MyTimerTask extends TimerTask {
 		this.application = application;
 	}
 	
-
+		
 	@Override
 	public void run() {
 		
@@ -62,4 +62,6 @@ public class MyTimerTask extends TimerTask {
 			application.setAttribute("bigList", hget);
 		}		
 	}
+	
+	
 }

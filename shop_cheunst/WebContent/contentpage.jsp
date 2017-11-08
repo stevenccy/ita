@@ -319,7 +319,7 @@
 													<c:if test="${queryList.lastPage}">
     class="disabled"
     </c:if>><a
-													href="${shop}/ProductController/queryCategoryForList.mvc?currentPage=${num-1}&cid=${cid}"
+													href="${shop}/ProductController/queryCategoryForList.mvc?currentPage=${num+1}&cid=${cid}"
 													aria-label="Next"><i class="fa fa-caret-right"></i></a></li>
 											</ul>
 											</nav>
@@ -348,7 +348,7 @@
 													<c:if test="${queryList.lastPage}">
     class="disabled"
     </c:if>><a
-													href="${shop}/ProductController/queryForList.mvc?currentPage=${num-1}&keyword=${keyword}"
+													href="${shop}/ProductController/queryForList.mvc?currentPage=${num+1}&keyword=${keyword}"
 													aria-label="Next"><i class="fa fa-caret-right"></i></a></li>
 											</ul>
 											</nav>
