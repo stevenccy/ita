@@ -2,9 +2,12 @@ package cn.oocl.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
+import org.apache.commons.io.FileUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,20 +19,35 @@ import cn.oocl.model.Product;
 public class ProductController extends BaseController {
 
 	@RequestMapping("/save")
-	public String save(MultipartFile file, Product product) throws IllegalStateException, IOException {
-		if (file.getSize() > 0) {
-			String fileName = file.getOriginalFilename();
+	public String save(Product product) throws IllegalStateException, IOException {
+//		if (file.getSize() > 0) {
+//			
+//			
+//			
+//			String fileName = file.getOriginalFilename();
+//
+//			fileName = fileUpload.randomFileName(fileName);
+//
+//			String basePath = application.getRealPath("/assets/images");
+//			System.out.println(basePath);
+//			File upload = new File(basePath, fileName);
+//
+//			file.transferTo(upload);
+//
+//			product.setImgurl(fileName);
+//		}
+		if(!StringUtils.isEmpty(product.getImgurl())){
+			String fileName = product.getImgurl();
 
 			fileName = fileUpload.randomFileName(fileName);
-
 			String basePath = application.getRealPath("/assets/images");
 			System.out.println(basePath);
 			File upload = new File(basePath, fileName);
-
-			file.transferTo(upload);
-
+			URL url = new URL (product.getImgurl());
+			FileUtils.copyURLToFile(url, upload);
 			product.setImgurl(fileName);
 		}
+
 		productService.save(product);
 		return "redirect:/admin/admin_query.jsp"; // no need project name
 	}

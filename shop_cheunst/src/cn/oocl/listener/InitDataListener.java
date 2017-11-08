@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -16,6 +17,7 @@ import cn.oocl.model.Category;
 import cn.oocl.model.Product;
 import cn.oocl.service.CategoryService;
 import cn.oocl.service.ProductService;
+import cn.oocl.utils.MyTimerTask;
 
 /*
  * web組件: Servlet Filter Listener
@@ -30,31 +32,28 @@ public class InitDataListener implements ServletContextListener {
 
 	private CategoryService categoryService = null;
 	private ProductService productService = null;
+	private MyTimerTask myTimerTask = null;
 
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
 		// 从application全局唯一的内置对象中获取相关的bean
 		WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(event.getServletContext());
-		categoryService = context.getBean("categoryService",CategoryService.class);
-		productService = context.getBean("productService",ProductService.class);
-		
+		categoryService = context.getBean("categoryService", CategoryService.class);
+		myTimerTask = context.getBean("myTimerTask", MyTimerTask.class);
+
 		System.out.println("web容器啟動時候,方法會執行");
 		// 1: 調用CategoryService.query(); 獲取所有的類別信息
 		Iterable<Category> catList = categoryService.queryAll();
 		System.out.println(catList);
 		// 2: 應該要存儲在任何地方可以訪問的區域(全局唯一),application
 		ServletContext application = event.getServletContext();
-		System.out.println("application:" + application);
 		application.setAttribute("catList", catList);
-		// 聲明一個用來存儲集合的集合
-		List<Iterable<Product>> bigList = new ArrayList<Iterable<Product>>();
-		// 查詢首頁要顯示的熱點類別
-		for (Category category : categoryService.queryByHot('Y')) {
-			// 根據當前熱點類別的ID查詢出首頁要顯示的熱點商品
-			Iterable<Product> proList = productService.queryByCid(category.getId());
-			bigList.add(proList);
-		}
-		application.setAttribute("bigList", bigList);
+
+		// 解决思路: 判断Redis缓存中是否存在商品的数据,如果不存在则查询,否则直接从Redis中获取
+
+		myTimerTask.setApplication(application); // 此对象必须交给Spring创建,才能有IOC功能
+		new Timer(true).schedule(myTimerTask, 0, 1000 * 5); // 配置为守护线程,tomcat关闭之后此线程也会终止
+
 		// 加载银行的图标,并且存储到application中
 		String[] bankName = new File(application.getRealPath("/images/bank")).list(new FilenameFilter() {
 

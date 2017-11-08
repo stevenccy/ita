@@ -6,6 +6,9 @@
 <title>Admin Page</title>
 <%@include file="/WEB-INF/public.jspf"%>
 <script src="${shop}/assets/plugins/js/image-picker-min.js"></script>
+<script src="${shop}/assets/plugins/js/masonry.pkgd.min.js"></script>
+<script src="${shop}/assets/plugins/js/imagesloaded.pkgd.min.js"></script>
+
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
 	rel="stylesheet"
@@ -15,28 +18,39 @@
 <script type="text/javascript">
 	function getImage(obj) {
 		console.log(obj);
-		alert(obj.value);
 		//$("#selectImages").imagespicker({
 		//	hide_select : true
 		//});
-
-		$.ajax({
-			url : "${shop}/ImageController/search.mvc",
-			type : "GET",
-			data : {
-				searchTerm : obj.value
-			},
-			dataType : "json",
-			success : function(data) {
-				console.log(data.jsonResponse);
-				var selectImages = $('#selectImages');
-				for (var i = 0; i < 5; i++) {
-					console.log(data.jsonResponse.value[i].contentUrl);
-					selectImages.append('<option data-img-src="'+data.jsonResponse.value[i].contentUrl)
+		if (obj.value) {
+			$.ajax({
+				url : "${shop}/ImageController/search.mvc",
+				type : "GET",
+				data : {
+					searchTerm : obj.value
+				},
+				dataType : "json",
+				success : function(data) {
+					console.log(data.jsonResponse);
+					var selectImages = $('#selectImages');
+					var result = JSON.parse(data.jsonResponse);
+					console.log(result);
+					for (var i = 0; i < 5; i++) {
+						selectImages.append('<option data-img-src="'
+								+ result.value[i].contentUrl + '"value="'
+								+ result.value[i].contentUrl + '"'
+								+ result.value[i].contentUrl + '</option>');
+					}
+					selectImages.imagepicker();
+					var $container = $('.image_picker_selector');
+					$container.imagesLoaded(function() {
+						$container.masonry({
+							columnWidth : 30,
+							itemSelector : '.thumbnail'
+						});
+					});
 				}
-			}
-		});
-
+			});
+		}
 	}
 </script>
 
@@ -164,7 +178,7 @@
 										step="0.01" placeholder="Please enter the price.">
 								</div>
 							</div>
-							<select class="image-picker show-html" id="selectImages">
+							<select id="selectImages" class="image-picker" name="imgurl">
 							</select>
 
 							<div id="selectImages"></div>
